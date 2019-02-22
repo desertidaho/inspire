@@ -21,12 +21,13 @@ function _setState(prop, data) {
 
 
 export default class WeatherService {
-	get Weather() {
-		return _state.weather
-	}
 
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)
+	}
+
+	get Weather() {
+		return _state.weather
 	}
 
 	getWeather() {
