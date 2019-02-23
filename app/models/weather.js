@@ -11,14 +11,11 @@ export default class Weather {
 
   weatherTemplate() {
     return `
-      <div class="card text-white" id="weather-card">
-			 <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
-			  <div class="card-body">
-				  <h5 class="card-title">${this.city} weather:</h5>
-				  <p>${this.description}</p>
-				  <p>${this.celcius}°C &nbsp ${this.farenheit}°F</p>
-				  <p>wind from ${this.windDegrees}° @ ${this.windSpeed} kts.</p>
-		  	</div>
+      <div class="text-white" id="weather-div">
+				  <p class="weather-city">${this.city} weather:</p>
+				  <p class="">${this.description}</p>
+				  <p class="weather-p">${this.celcius}°C &nbsp ${this.farenheit}°F</p>
+				  <p>wind from <span class="wind-p"> ${this.windDegrees}° @ ${this.windSpeed} </span> kts.</p>
 		  </div>
     `
   }

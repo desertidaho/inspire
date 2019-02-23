@@ -6,7 +6,9 @@ export default class Quote {
 
   quoteTemplate() {
     return `
-          <h5 class="text-white font-italic">${this.body}</h5> <p class="text-white"> &ensp; &mdash; ${this.author}</p>
-    `
+    <div class="" id="quote-div">
+          <h5 class="text-white font-italic mt-2">${this.body}</h5> <p class="text-white mt-3"> &ensp; &mdash; ${this.author}</p>
+    </div>
+          `
   }
 }

@@ -3,6 +3,7 @@ body {
   padding: 0;
   height: 100vh;
   width: 100vw;
+  font-family: 'Oswald', sans-serif;
 }
 
 #bg-image {
@@ -12,20 +13,14 @@ body {
   position: absolute;
 }
 
-#weather-card {
-  background: black;
-  color: white;
-  text-shadow: 0.5px 0.5px yellow;
-  border: transparent;
-  line-height: 0.7rem;
-  opacity: 0.6;
-  letter-spacing: 0.1rem;
+.left-column {
+  height: 100vh;
 }
 
 #todo-div {
   background: black;
   color: white;
-  text-shadow: 1px 1px green;
+  text-shadow: 0.2px 0.2px green;
   border: transparent;
   line-height: 1.5rem;
   opacity: 0.6;
@@ -48,6 +43,10 @@ input[type="text"]#todo-input::-webkit-input-placeholder {
   font-size: 0.7rem;
 }
 
+#todo-delete {
+  font-size: 0.6rem;
+}
+
 li {
   list-style: none;
 }
@@ -66,17 +65,37 @@ li {
   font-size: 0.8rem;
 }
 
-
-#quote {
+#weather {
   background: black;
   color: white;
-  text-shadow: 1px 1px blue;
+  text-shadow: 0.2px 0.2px yellow;
+  border: transparent;
+  line-height: 0.5rem;
+  opacity: 0.6;
+  letter-spacing: 0.1rem;
+   padding: 1.5vh 1.5vw;
+}
+
+.weather-city {
+  font-size: 1.1rem;
+}
+
+.weather-p,
+.wind-p {
+  font-size: 0.9rem;
+}
+
+#quote-div {
+  background: black;
+  color: white;
+  text-shadow: 0.2px 0.2px blue;
   border: transparent;
   line-height: 0.3rem;
   opacity: 0.6;
   padding: 1.5vh 1.5vw;
   margin-bottom: 1vh;
   letter-spacing: 0.1rem;
+  font-weight: 300;
 }
 
 footer {
