@@ -11,11 +11,7 @@ export default class Weather {
     this.sunset = data.sys.sunset
   }
 
-
-
   weatherTemplate() {
-
-
     return `
       <div class="text-white" id="weather-div">
 				  <h5 class="mt-1">${this.city} Weather</h5>

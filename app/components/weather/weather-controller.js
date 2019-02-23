@@ -7,6 +7,7 @@ function drawWeather() {
 	document.querySelector('#weather').innerHTML = template
 }
 
+//Public
 export default class WeatherController {
 	constructor() {
 		_weatherService.addSubscriber('weather', drawWeather)

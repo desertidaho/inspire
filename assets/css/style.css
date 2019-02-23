@@ -20,7 +20,7 @@ body {
 #todo-div {
   background: black;
   color: white;
-  text-shadow: 0.2px 0.2px green;
+  text-shadow: 0.2px 0.9px rgb(4, 228, 4);
   border: transparent;
   line-height: 1.5rem;
   opacity: 0.6;
@@ -30,7 +30,7 @@ body {
 
 #todos {
   color: white;
-  text-shadow: 0.2px 0.2px green;
+  text-shadow: 0.2px 0.2px rgb(4, 228, 4);
 }
 
 input[type="text"]#todo-input::-webkit-input-placeholder {
@@ -68,7 +68,7 @@ li {
 #weather {
   background: black;
   color: white;
-  text-shadow: 0.2px 0.2px yellow;
+  text-shadow: 0.2px 0.9px yellow;
   border: transparent;
   line-height: 0.5rem;
   opacity: 0.6;
@@ -84,7 +84,7 @@ li {
 #quote-div {
   background: black;
   color: white;
-  text-shadow: 0.2px 0.2px blue;
+  text-shadow: 0.2px 0.9px blue;
   border: transparent;
   line-height: 0.3rem;
   opacity: 0.6;
@@ -99,6 +99,18 @@ li {
 
 .after-author {
   margin-bottom: 4vh;
+}
+
+#clock-div {
+  font-size: 15rem;
+  color: white;
+  text-shadow: 3px 4px black;
+}
+
+#greeting {
+  color: white;
+  text-shadow: 0.3px 1px black;
+  font-weight: 600;
 }
 
 footer {
