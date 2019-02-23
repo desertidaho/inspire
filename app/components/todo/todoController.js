@@ -9,7 +9,6 @@ function _drawTodos() {
 		if (t.completed == true) {
 			template += `
 				<li class="mb-2" onclick="app.controllers.todoController.getTodos()"><del>${t.description}</del>  &ensp; <button class="btn btn-sm btn-danger shadow" id="todo-delete" onclick="app.controllers.todoController.removeTodo('${t._id}')">Delete</button></li>
-				
         `
 		} else {
 			template += `
