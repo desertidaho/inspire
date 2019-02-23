@@ -3,7 +3,7 @@ import QuoteService from "./quote-service.js";
 let _qs = new QuoteService()
 
 function drawQuote() {
-  let template = _qs.Quote.getQuote()
+  let template = _qs.Quote.quoteTemplate()
   document.querySelector('#quote').innerHTML = template
 }
 

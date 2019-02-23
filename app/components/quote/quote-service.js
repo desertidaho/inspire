@@ -33,7 +33,7 @@ export default class QuoteService {
 	getQuote() {
 		_quoteApi.get()
 			.then(res => {
-				_setState('quote', new Quote(res.data))
+				_setState('quote', new Quote(res.data.quote))
 			})
 	}
 

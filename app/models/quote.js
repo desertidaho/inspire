@@ -4,9 +4,10 @@ export default class Quote {
     this.body = data.body
   }
 
-  getQuote() {
+  quoteTemplate() {
     return `
-
+          <h5>${this.author}</h5>
+				  <h5>${this.body}</h5>
     `
   }
 }
