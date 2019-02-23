@@ -101,8 +101,14 @@ li {
   margin-bottom: 4vh;
 }
 
-#clock-div {
-  font-size: 15rem;
+#date {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 1px 2px black;
+}
+
+#clock {
+  font-size: 12rem;
   color: white;
   text-shadow: 3px 4px black;
 }
