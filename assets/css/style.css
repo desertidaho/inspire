@@ -30,7 +30,7 @@ body {
 
 #todos {
   color: white;
-   text-shadow: 1px 1px black;
+  text-shadow: 0.2px 0.2px green;
 }
 
 input[type="text"]#todo-input::-webkit-input-placeholder {
@@ -73,11 +73,7 @@ li {
   line-height: 0.5rem;
   opacity: 0.6;
   letter-spacing: 0.1rem;
-   padding: 1.5vh 1.5vw;
-}
-
-.weather-city {
-  font-size: 1.1rem;
+  padding: 1.5vh 1.5vw;
 }
 
 .weather-p,
@@ -93,9 +89,16 @@ li {
   line-height: 0.3rem;
   opacity: 0.6;
   padding: 1.5vh 1.5vw;
-  margin-bottom: 1vh;
   letter-spacing: 0.1rem;
   font-weight: 300;
+}
+
+.author {
+  float: right;
+}
+
+.after-author {
+  margin-bottom: 4vh;
 }
 
 footer {
