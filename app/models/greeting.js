@@ -1,12 +1,7 @@
 export default class Greeting {
-  constructor(data) {
+  constructor() {
 
-  }
 
-  clockTemplate() {
-    return `
-      
-    `
   }
 
 }

@@ -3,7 +3,7 @@ import GreetingService from "./greetingService.js";
 let _greetingService = new GreetingService()
 
 function drawClock() {
-
+  document.querySelector('#clock-div').innerHTML = _greetingService.Clock
 }
 
 
@@ -11,18 +11,14 @@ function drawClock() {
 export default class GreetingController {
   constructor() {
     _greetingService.addSubscriber('clock', drawClock)
-
+    function setTime() {
+      _greetingService.getClock()
+    }
+    setTime()
+    setInterval(setTime, 10000)
   }
 
 }
 
-function getTime() {
-  let date = new Date()
-  let hour = date.getHours()
-  let min = date.getMinutes()
-  let time = hour + ':' + min
-  document.querySelector('#clock-div').innerHTML = time
-  setTimeout(getTime, 10000)
-}
-getTime()
+
 

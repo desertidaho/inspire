@@ -1,8 +1,21 @@
 import Greeting from "../../models/greeting.js";
 
+let _time = new Greeting
 
+let time
+function getTime() {
+  let date = new Date()
+  let hour = date.getHours()
+  if (hour < 10) {
+    hour = '0' + hour
+  }
+  let min = date.getMinutes()
+  if (min < 10) {
+    min = '0' + min
+  }
+  time = hour + ':' + min
 
-
+}
 
 let _state = {
   clock: ''
@@ -26,6 +39,11 @@ export default class GreetingService {
 
   get Clock() {
     return _state.clock
+  }
+
+  getClock() {
+    getTime()
+    _setState('clock', time)
   }
 
 
