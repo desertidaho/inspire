@@ -10,7 +10,25 @@ body {
   position: absolute;
 }
 
+#weather-card {
+  background: transparent;
+  color: white;
+  text-shadow: 1px 1px black;
+  border: transparent;
+}
 
+#todos {
+  color: white;
+   text-shadow: 1px 1px black;
+}
+
+#todo-input {
+  width: 350px;
+}
+
+li {
+  list-style: none;
+}
 
 #todo-error{
   color: red;

@@ -1,7 +1,5 @@
 export default class Weather {
   constructor(data) {
-    console.log('[RAW WEATHER API DATA]', data);
-
     this.city = data.name
     this.description = data.weather[0].description
     this.kelvin = data.main.temp
@@ -11,22 +9,18 @@ export default class Weather {
     this.windSpeed = data.wind.speed
   }
 
-
   weatherTemplate() {
     return `
-      <div class="card">
+      <div class="card" id="weather-card">
 			 <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
 			  <div class="card-body">
-				  <h4 class="card-title">City: ${this.city}</h4>
-				  <h5>Description: ${this.description}</h5>
-				  <h5>Temperature: ${this.celcius}°C<span class="text-white">....</span>${this.farenheit}°F</h5>
-				  <h5>Wind direction from: ${this.windDegrees}°</h5>
-				  <h5>Wind speed: ${this.windSpeed}kts.</h5>
+				  <h4 class="card-title">${this.city} weather:</h4>
+				  <h5>${this.description}</h5>
+				  <h5>${this.celcius}°C &nbsp ${this.farenheit}°F</h5>
+				  <h5>Wind from ${this.windDegrees}° @ ${this.windSpeed} kts.</h5>
 		  	</div>
 		  </div>
     `
-
   }
-
 
 }
