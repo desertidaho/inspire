@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 #bg-image {
@@ -11,10 +13,24 @@ body {
 }
 
 #weather-card {
-  background: transparent;
+  background: black;
   color: white;
-  text-shadow: 1px 1px black;
+  text-shadow: 0.5px 0.5px yellow;
   border: transparent;
+  line-height: 0.7rem;
+  opacity: 0.6;
+  letter-spacing: 0.1rem;
+}
+
+#todo-div {
+  background: black;
+  color: white;
+  text-shadow: 1px 1px green;
+  border: transparent;
+  line-height: 1.5rem;
+  opacity: 0.6;
+  padding: 1.5vh 1.5vw;
+  letter-spacing: 0.1rem;
 }
 
 #todos {
@@ -22,8 +38,14 @@ body {
    text-shadow: 1px 1px black;
 }
 
-#todo-input {
-  width: 300px;
+input[type="text"]#todo-input::-webkit-input-placeholder {
+  color: green;
+  font-weight: 600;
+  width: 200px;
+}
+
+.todo-btn {
+  font-size: 0.7rem;
 }
 
 li {
@@ -33,4 +55,33 @@ li {
 #todo-error{
   color: red;
   font-size: 2em;
+}
+
+.todo-checkbox,
+.completed {
+  float: right;
+}
+
+.completed {
+  font-size: 0.8rem;
+}
+
+
+#quote {
+  background: black;
+  color: white;
+  text-shadow: 1px 1px blue;
+  border: transparent;
+  line-height: 0.3rem;
+  opacity: 0.6;
+  padding: 1.5vh 1.5vw;
+  margin-bottom: 1vh;
+  letter-spacing: 0.1rem;
+}
+
+footer {
+  position: fixed;
+  bottom: -2px;
+  width: 100%;
+  height: auto;
 }

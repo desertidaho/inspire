@@ -12,10 +12,8 @@ function _drawTodos() {
         `
 		} else {
 			template += `
-        <li onclick="app.controllers.todoController.getTodos()">${t.description}
-				<p>Check if complete &ensp;<input type="checkbox" class="todo-form" name="completed"
-				 onclick="app.controllers.todoController.toggleTodoStatus('${t._id}')"></p>
-					</li>
+        <li onclick="app.controllers.todoController.getTodos()">${t.description} &ensp;<input type="checkbox" class="todo-checkbox mt-2" name="completed"
+				 onclick="app.controllers.todoController.toggleTodoStatus('${t._id}')"></li>
 				`
 		}
 	})
@@ -24,8 +22,8 @@ function _drawTodos() {
 	//add todo input form
 	document.querySelector('#todo-form').innerHTML = `
         <form onsubmit="app.controllers.todoController.addTodo(event)">
-          <input required id="todo-input" type="text" class="todo-form" name="description" placeholder=" Description of new todo...">
-          <button class="btn-outline-dark shadow" type="submit">Add todo</button>
+          <input required id="todo-input" type="text" class="todo-form" name="description" placeholder=" New todo...">
+					<button class="btn btn-sm btn-outline-success shadow todo-btn mb-1" type="submit">Add</button>  <span class="completed">Completed <i class="fas fa-check"></i></span>	
         </form>
   `
 
