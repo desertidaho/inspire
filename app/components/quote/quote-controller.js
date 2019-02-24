@@ -7,10 +7,16 @@ function drawQuote() {
   document.querySelector('#quote').innerHTML = template
 }
 
+
+//Public
 export default class QuoteController {
   constructor() {
     _qs.addSubscriber('quote', drawQuote)
     _qs.getQuote()
+  }
+
+  nextQuote() {
+    _qs.nextQuote()
   }
 
 }

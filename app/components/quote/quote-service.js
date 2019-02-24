@@ -1,7 +1,7 @@
 import Quote from "../../models/quote.js";
 
 // @ts-ignore
-let _quoteApi = axios.create({
+const _quoteApi = axios.create({
 	baseURL: '//bcw-sandbox.herokuapp.com/api/quotes',
 	timeout: 3000
 });
@@ -37,4 +37,7 @@ export default class QuoteService {
 			})
 	}
 
+	nextQuote() {
+		this.getQuote()
+	}
 }

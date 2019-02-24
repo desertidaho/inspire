@@ -89,11 +89,15 @@ li {
 }
 
 .author {
+  float: left;
+}
+
+#next-quote {
   float: right;
 }
 
 .after-author {
-  margin-bottom: 4vh;
+  margin-bottom: 9vh;
 }
 
 #date {
@@ -134,6 +138,9 @@ footer {
     bottom: 2vh;
 }
 
-#next-img {
+#next-img,
+#next-quote {
   text-shadow: 1px 1px black;
+  letter-spacing: 0.06rem;
+
 }
