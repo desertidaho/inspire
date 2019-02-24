@@ -1,12 +1,11 @@
 import WeatherService from "./weather-service.js";
 
-let _weatherService = new WeatherService()
+const _weatherService = new WeatherService()
 
 function drawWeather() {
 	let template = _weatherService.Weather.weatherTemplate()
 	document.querySelector('#weather').innerHTML = template
 }
-
 
 
 //Public

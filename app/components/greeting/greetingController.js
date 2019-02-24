@@ -20,7 +20,7 @@ function drawUserForm() {
                     <button type="submit" class="btn btn-primary mb-2 shadow">Submit</button>
                   </form>`
   document.querySelector('#user-form').innerHTML = template
-  document.querySelector('#user').innerHTML = 'Brett'
+  document.querySelector('#user').innerHTML = 'WAT!'
 }
 
 function drawNewUser() {
@@ -28,7 +28,6 @@ function drawNewUser() {
   window.localStorage.setItem('name', JSON.stringify(newUser))
   document.querySelector('#user').innerHTML = newUser
   document.querySelector('#user-form').style.visibility = "hidden"
-
 }
 
 
@@ -42,7 +41,8 @@ export default class GreetingController {
 
     _greetingService.getDate()
     window.localStorage.getItem('name')
-    JSON.parse(window.localStorage.getItem('name'))
+    let newU = JSON.parse(window.localStorage.getItem('name'))
+    document.querySelector('#user').innerHTML = newU
 
     function setTime() {
       _greetingService.getClock()

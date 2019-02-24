@@ -26,7 +26,6 @@ function _drawTodos() {
 					<button class="btn btn-sm btn-outline-success shadow todo-btn mb-1" type="submit">Add</button>  <span class="completed">Completed <i class="fas fa-check"></i></span>	
         </form>
   `
-
 }
 
 function _drawError() {

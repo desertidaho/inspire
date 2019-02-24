@@ -34,4 +34,5 @@ export default class ImageService {
 				setState('img', res.data.url)
 			})
 	}
+
 }

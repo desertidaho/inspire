@@ -82,13 +82,11 @@ export default class GreetingService {
   }
 
   changeUser() {
-    _setState('changeUser', 'Brett')
+    _setState('changeUser', ' ')
   }
 
   addUser(newUser) {
     _setState('newUser', newUser)
-
   }
-
 
 }

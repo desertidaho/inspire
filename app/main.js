@@ -4,7 +4,6 @@ import TodoController from "./components/todo/todoController.js";
 import QuoteController from "./components/quote/quote-controller.js";
 import GreetingController from "./components/greeting/greetingController.js";
 
-
 class App {
   constructor() {
     this.controllers = {
@@ -17,4 +16,4 @@ class App {
   }
 }
 
-window['app'] = new App()  
+window['app'] = new App()
