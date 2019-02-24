@@ -42,9 +42,9 @@ export default class GreetingController {
     _greetingService.addSubscriber('newUser', drawNewUser)
 
     _greetingService.getDate()
-    window.localStorage.getItem('name' || 'default name')
+    window.localStorage.getItem('name')
     let newU = JSON.parse(window.localStorage.getItem('name'))
-    document.querySelector('#user').innerHTML = newU
+    document.querySelector('#user').innerHTML = newU || 'Brett'
 
     function setTime() {
       _greetingService.getClock()
