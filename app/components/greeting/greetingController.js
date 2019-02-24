@@ -42,7 +42,7 @@ export default class GreetingController {
     _greetingService.addSubscriber('newUser', drawNewUser)
 
     _greetingService.getDate()
-    window.localStorage.getItem('name' || 'Brett')
+    window.localStorage.getItem('name' || 'default name')
     let newU = JSON.parse(window.localStorage.getItem('name'))
     document.querySelector('#user').innerHTML = newU
 
