@@ -42,6 +42,7 @@ export default class GreetingController {
 
     _greetingService.getDate()
     window.localStorage.getItem('name')
+    JSON.parse(window.localStorage.getItem('name'))
 
     function setTime() {
       _greetingService.getClock()
