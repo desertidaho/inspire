@@ -27,7 +27,7 @@ function drawNewUser() {
   let newUser = _greetingService.NewUser.name
   window.localStorage.setItem('name', JSON.stringify(newUser))
   document.querySelector('#user').innerHTML = newUser
-  document.querySelector('#user-form').style.display = "none"
+  document.querySelector('#user-form').style.visibility = "hidden"
 
 }
 
@@ -41,6 +41,7 @@ export default class GreetingController {
     _greetingService.addSubscriber('newUser', drawNewUser)
 
     _greetingService.getDate()
+    window.localStorage.getItem('name')
 
     function setTime() {
       _greetingService.getClock()
