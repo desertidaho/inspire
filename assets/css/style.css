@@ -125,3 +125,15 @@ li {
 #user-form {
   margin-left: 23vw;
 }
+
+footer {
+    position: fixed;
+    height: auto;
+    width: 100vw;
+    background-color: transparent;
+    bottom: 2vh;
+}
+
+#next-img {
+  text-shadow: 1px 1px black;
+}

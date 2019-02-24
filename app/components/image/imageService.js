@@ -17,6 +17,7 @@ function setState(prop, data) {
 	_subscribers[prop].forEach(fn => fn())
 }
 
+
 //Public
 export default class ImageService {
 
@@ -33,6 +34,10 @@ export default class ImageService {
 			.then(res => {
 				setState('img', res.data.url)
 			})
+	}
+
+	nextImg() {
+		this.getImgData()
 	}
 
 }

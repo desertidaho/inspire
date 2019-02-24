@@ -7,11 +7,16 @@ function drawImg() {
   document.querySelector('#bg-image').style.backgroundImage = `url(${img})`;
 }
 
+
 //Public
 export default class WeatherController {
   constructor() {
     _is.addSubscriber('img', drawImg)
     _is.getImgData()
+  }
+
+  nextImg() {
+    _is.nextImg()
   }
 
 }
