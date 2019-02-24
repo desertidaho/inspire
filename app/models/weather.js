@@ -15,7 +15,7 @@ export default class Weather {
     return `
       <div class="text-white" id="weather-div">
 				  <h5 class="mt-1">${this.city} Weather</h5>
-				  <p class="">Sky: ${this.description}</p>
+				  <p class="">Sky condition: ${this.description}</p>
 				  <p class="weather-p">Temperature: ${this.celcius}°C &nbsp ${this.farenheit}°F</p>
           <p>Wind from: <span class="wind-p"> ${this.windDegrees}° @ ${this.windSpeed} </span> kts.</p>
           <p>Sunrise: ${this.sunrise}</p>

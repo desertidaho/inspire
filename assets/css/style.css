@@ -76,11 +76,6 @@ li {
   padding: 1.5vh 1.5vw;
 }
 
-.weather-p,
-.wind-p {
-  font-size: 0.9rem;
-}
-
 #quote-div {
   background: black;
   color: white;
