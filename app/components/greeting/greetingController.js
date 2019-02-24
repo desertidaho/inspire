@@ -6,10 +6,12 @@ function drawData() {
   let time = _greetingService.Clock
   document.querySelector('#clock').innerHTML = time
   document.querySelector('#date').innerHTML = _greetingService.Date
-  if (+time[1] >= 2) {
+  //part of day greeting logic
+  if (+time[0] == 0 || (+time[0] == 1 && +time[1] == 0) || (+time[0] == 1 && +time[1] == 1)) {
+    document.querySelector('#change-greeting').innerHTML = 'morning '
+  } else if (+time[1] >= 2) {
     document.querySelector('#change-greeting').innerHTML = 'afternoon '
-  }
-  if (+time[1] >= 7 || +time[0] == 2) {
+  } else if (+time[1] >= 7 || +time[0] == 2) {
     document.querySelector('#change-greeting').innerHTML = 'evening '
   }
 }
@@ -40,7 +42,7 @@ export default class GreetingController {
     _greetingService.addSubscriber('newUser', drawNewUser)
 
     _greetingService.getDate()
-    window.localStorage.getItem('name')
+    window.localStorage.getItem('name' || 'defaultName')
     let newU = JSON.parse(window.localStorage.getItem('name'))
     document.querySelector('#user').innerHTML = newU
 
