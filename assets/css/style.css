@@ -33,6 +33,10 @@ body {
   text-shadow: 0.2px 0.2px rgb(4, 228, 4);
 }
 
+#num-of-todos {
+  font-size: 1rem;
+}
+
 input[type="text"]#todo-input::-webkit-input-placeholder {
   color: green;
   font-weight: 600;
