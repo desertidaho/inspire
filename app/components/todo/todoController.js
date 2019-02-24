@@ -1,6 +1,6 @@
 import TodoService from "./todoService.js";
 
-let _todoService = new TodoService()
+const _todoService = new TodoService()
 
 function _drawTodos() {
 	//todos list

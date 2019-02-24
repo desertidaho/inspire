@@ -1,5 +1,5 @@
 // @ts-ignore
-let _imgApi = axios.create({
+const _imgApi = axios.create({
 	baseURL: '//bcw-sandbox.herokuapp.com/api/images',
 	timeout: 3000
 });
