@@ -31,12 +31,16 @@ function getToday() {
 
 let _state = {
   clock: '',
-  todaysDate: ''
+  todaysDate: '',
+  changeUser: {},
+  newUser: {}
 }
 
 let _subscribers = {
   clock: [],
-  todaysDate: []
+  todaysDate: [],
+  changeUser: [],
+  newUser: []
 }
 
 function _setState(prop, data) {
@@ -59,6 +63,14 @@ export default class GreetingService {
     return _state.todaysDate
   }
 
+  get ChangeUser() {
+    return _state.changeUser
+  }
+
+  get NewUser() {
+    return _state.newUser
+  }
+
   getClock() {
     getTime()
     _setState('clock', time)
@@ -68,5 +80,15 @@ export default class GreetingService {
     getToday()
     _setState('todaysDate', today)
   }
+
+  changeUser() {
+    _setState('changeUser', 'Brett')
+  }
+
+  addUser(newUser) {
+    _setState('newUser', newUser)
+
+  }
+
 
 }

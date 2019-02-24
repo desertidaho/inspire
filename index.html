@@ -62,9 +62,18 @@
 
 				<!-- greeting -->
 				<div class="row mt-4">
-					<div class="col d-flex justify-content-center">
-						<h1 id="greeting">Good <span id="change-greeting">morning</span> Brett, what is your main focus for
-							today?</h1>
+					<div class="col-md-12 d-flex justify-content-center">
+						<h2 id="greeting">Good <span id="change-greeting">morning </span><span data-toggle="tooltip"
+								title="Change username" onclick="app.controllers.greetingController.changeUser()"
+								id="user">Brett</span>, what
+							is your
+							main focus for
+							today?</h2>
+					</div>
+					<div class="row mt-4">
+						<div class="col-md-12" id="user-form">
+							<!-- username form goes here -->
+						</div>
 					</div>
 				</div>
 			</div>
