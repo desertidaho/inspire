@@ -7,7 +7,7 @@ export default class Weather {
     this.farenheit = (this.celcius * (9 / 5) + 32).toFixed(0)
     this.windDegrees = data.wind.deg
     this.windSpeed = data.wind.speed
-    this.sunrise = parseInt(new Date(data.sys.sunrise * 1e3).toISOString().slice(-13, -11)) - 7 + new Date(data.sys.sunrise * 1e3).toISOString().slice(-11, -8)
+    this.sunrise = '0' + (parseInt(new Date(data.sys.sunrise * 1e3).toISOString().slice(-13, -11)) - 7) + new Date(data.sys.sunrise * 1e3).toISOString().slice(-11, -8)
     this.sunset = (Math.abs(parseInt(new Date(data.sys.sunset * 1e3).toISOString().slice(-13, -11)) - 7) + 12) + new Date(data.sys.sunset * 1e3).toISOString().slice(-11, -8)
   }
 
