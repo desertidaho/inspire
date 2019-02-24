@@ -18,6 +18,14 @@ function _drawTodos() {
 		}
 	})
 	document.querySelector('#todos').innerHTML = template
+	//number of todo's logic
+	if (_todoService.Todos.length == 0) {
+		document.querySelector('#num-of-todos').innerHTML = 'all caught up'
+	} else if (_todoService.Todos.length == 1) {
+		document.querySelector('#num-of-todos').innerHTML = _todoService.Todos.length + ' ' + 'task'
+	} else if (_todoService.Todos.length > 1) {
+		document.querySelector('#num-of-todos').innerHTML = _todoService.Todos.length + ' ' + 'tasks'
+	}
 
 	//add todo input form
 	document.querySelector('#todo-form').innerHTML = `
@@ -32,6 +40,7 @@ function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
 	document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`
 }
+
 
 //Public
 export default class TodoController {

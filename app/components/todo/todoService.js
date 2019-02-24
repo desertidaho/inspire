@@ -21,6 +21,7 @@ function _setState(prop, data) {
 	_subscribers[prop].forEach(fn => fn())
 }
 
+
 //Public
 export default class TodoService {
 
