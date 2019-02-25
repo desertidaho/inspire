@@ -21,11 +21,11 @@ function _drawTodos() {
 
 	//number of todo's logic
 	if (_todoService.Todos.length == 0) {
-		document.querySelector('#num-of-todos').innerHTML = 'all caught up'
+		document.querySelector('#num-of-todos').innerHTML = ' all caught up'
 	} else if (_todoService.Todos.length == 1) {
-		document.querySelector('#num-of-todos').innerHTML = _todoService.Todos.length + ' ' + 'task'
+		document.querySelector('#num-of-todos').innerHTML = ' ' + _todoService.Todos.length + ' ' + 'task'
 	} else if (_todoService.Todos.length > 1) {
-		document.querySelector('#num-of-todos').innerHTML = _todoService.Todos.length + ' ' + 'tasks'
+		document.querySelector('#num-of-todos').innerHTML = ' ' + _todoService.Todos.length + ' ' + 'tasks'
 	}
 
 	//add todo input form
