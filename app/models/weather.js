@@ -9,13 +9,14 @@ export default class Weather {
     this.windSpeed = data.wind.speed
     this.sunrise = '0' + (parseInt(new Date(data.sys.sunrise * 1e3).toISOString().slice(-13, -11)) - 7) + new Date(data.sys.sunrise * 1e3).toISOString().slice(-11, -8)
     this.sunset = (Math.abs(parseInt(new Date(data.sys.sunset * 1e3).toISOString().slice(-13, -11)) - 7) + 12) + new Date(data.sys.sunset * 1e3).toISOString().slice(-11, -8)
+    this.icon = data.weather[0].icon
   }
 
   weatherTemplate() {
     return `
       <div class="text-white" id="weather-div">
-				  <h5 class="mt-1">${this.city} Weather</h5>
-				  <p class="mt-3">Sky condition: ${this.description}</p>
+				  <h5 class="mt-1">${this.city} Weather &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;<img id=wx-icon" src="https://openweathermap.org/img/w/${this.icon}.png"> </h5>
+				  <p>Sky condition: ${this.description}</p>
 				  <p class="weather-p">Temperature: ${this.celcius}°C &nbsp ${this.farenheit}°F</p>
           <p>Wind from: <span class="wind-p"> ${this.windDegrees}° @ ${this.windSpeed} </span> kts.</p>
           <p>Sunrise: ${this.sunrise}</p>
