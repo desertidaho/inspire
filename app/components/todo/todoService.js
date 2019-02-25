@@ -43,7 +43,7 @@ export default class TodoService {
 				let data = res.data.data.map(t => new Todo(t))
 				_setState('todos', data)
 			})
-		//.catch(err => _setState('error', err.response.data))
+			.catch(err => _setState('error', err.response.data))
 	}
 
 	addTodo(todo) {
@@ -66,7 +66,6 @@ export default class TodoService {
 	}
 
 	removeTodo(_id) {
-		let todo = _state.todos.find(todo => todo._id == _id)
 		todoApi.delete(_id)
 			.then(res => {
 				this.getTodos()

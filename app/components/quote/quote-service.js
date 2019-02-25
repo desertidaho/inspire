@@ -40,4 +40,5 @@ export default class QuoteService {
 	nextQuote() {
 		this.getQuote()
 	}
+
 }

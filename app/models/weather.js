@@ -21,7 +21,7 @@ export default class Weather {
           <p>Sunrise: ${this.sunrise}</p>
           <p>Sunset: ${this.sunset}</p>
 		  </div>
-    `
+          `
   }
 
 }

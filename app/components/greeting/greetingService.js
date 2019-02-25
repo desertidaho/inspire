@@ -1,5 +1,3 @@
-import Greeting from "../../models/greeting.js";
-
 let time
 function getTime() {
   let date = new Date()

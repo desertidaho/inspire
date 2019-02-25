@@ -18,6 +18,7 @@ function _drawTodos() {
 		}
 	})
 	document.querySelector('#todos').innerHTML = template
+
 	//number of todo's logic
 	if (_todoService.Todos.length == 0) {
 		document.querySelector('#num-of-todos').innerHTML = 'all caught up'
