@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\components",
+    "\\app\\components\\greeting",
+    "\\app\\components\\weather",
+    "\\app\\models"
+  ],
+  "SelectedNode": "\\app\\models\\weather.js",
+  "PreviewInSolutionExplorer": false
+}
