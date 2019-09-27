@@ -1,6 +1,6 @@
 export default class Price {
     constructor(data) {
-        this.rate = '$' + Number.parseInt(data).toFixed(2);
+        this.rate = '$' + data.slice(0, data.length-2);
     }
 
     priceTemplate() {
