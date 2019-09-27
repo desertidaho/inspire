@@ -3,13 +3,14 @@
     "",
     "\\app",
     "\\app\\components",
-    "\\app\\components\\greeting",
-    "\\app\\components\\image",
-    "\\app\\components\\price",
     "\\app\\components\\quote",
     "\\app\\components\\todo",
-    "\\assets"
+    "\\app\\components\\weather",
+    "\\app\\models",
+    "\\assets",
+    "\\assets\\css",
+    "\\assets\\img"
   ],
-  "SelectedNode": "\\app\\main.js",
+  "SelectedNode": "\\app\\models\\weather.js",
   "PreviewInSolutionExplorer": false
 }
