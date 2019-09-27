@@ -14,12 +14,15 @@ export default class Price {
         this.ltcName = this.ltc.charAt(0).toUpperCase() + this.ltc.slice(1)
         this.ltcPrice = '$' + Number(data[5].priceUsd).toFixed(2);
         this.ltc24HourChange = Number(data[5].changePercent24Hr).toFixed(2);
+
+        this.goldPrice = '$1500.35';
+        this.gold24HourChange = '0.58';
     }
 
     priceTemplate() {
         return `
         <tr class="table-header">
-		    <th width="50%">Crypto</th>
+		    <th width="50%"></th>
 			<th width="45%">Price</th>
 			<th width="10%">Change/24hr</th>
         </tr>
@@ -40,5 +43,7 @@ export default class Price {
         </tr>
           `
     }
+
+
 
 }

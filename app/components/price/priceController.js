@@ -3,7 +3,7 @@ import PriceService from "./priceService.js";
 const _ps = new PriceService()
 
 function drawPrice() {
-    let template = _ps.Price.priceTemplate()
+    let template = _ps.CryptoPrice.priceTemplate()
     document.querySelector('#price').innerHTML = template
 }
 
@@ -11,8 +11,9 @@ function drawPrice() {
 //Public
 export default class PriceController {
     constructor() {
-        _ps.addSubscriber('price', drawPrice)
-        _ps.getPrice()
+        _ps.addSubscriber('cryptoPrice', drawPrice)
+        _ps.getCryptoPrice()
+        _ps.getMetalPrice()
     }
 
 }

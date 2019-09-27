@@ -1,19 +1,27 @@
 import Price from "../../models/price.js";
 
 // @ts-ignore
-const _priceApi = axios.create({
+const _cryptoPriceApi = axios.create({
     //baseURL: 'https://api.coindesk.com/v1/bpi/currentprice/usd.json',
     //baseURL: 'https://api.blockchain.info/stats',
     baseURL: 'https://api.coincap.io/v2/assets',
     timeout: 6000
 });
 
+// @ts-ignore
+const _metalPriceApi = axios.create({
+    baseURL: '',
+    timeout: 6000
+});
+
 let _state = {
-    price: {}
+    cryptoPrice: {},
+    metalPrice: {}
 }
 
 let _subscribers = {
-    price: []
+    cryptoPrice: [],
+    metalPrice: []
 }
 
 function _setState(prop, data) {
@@ -28,14 +36,25 @@ export default class PriceService {
         _subscribers[prop].push(fn)
     }
 
-    get Price() {
-        return _state.price
+    get CryptoPrice() {
+        return _state.cryptoPrice
     }
 
-    getPrice() {
-        _priceApi.get()
+    get MetalPrice() {
+        return _state.metalPrice
+    }
+
+    getCryptoPrice() {
+        _cryptoPriceApi.get()
             .then(res => {
-                _setState('price', new Price(res.data.data))
+                _setState('cryptoPrice', new Price(res.data.data))
+            })
+    }
+
+    getMetalPrice() {
+        _metalPriceApi.get()
+            .then(res => {
+                _setState('metalPrice', new Price(res.data.data))
             })
     }
 
