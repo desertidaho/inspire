@@ -4,9 +4,12 @@
     "\\app",
     "\\app\\components",
     "\\app\\components\\greeting",
-    "\\app\\components\\weather",
-    "\\app\\models"
+    "\\app\\components\\image",
+    "\\app\\components\\price",
+    "\\app\\components\\quote",
+    "\\app\\components\\todo",
+    "\\assets"
   ],
-  "SelectedNode": "\\app\\models\\weather.js",
+  "SelectedNode": "\\app\\main.js",
   "PreviewInSolutionExplorer": false
 }
