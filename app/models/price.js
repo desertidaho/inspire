@@ -1,6 +1,6 @@
 export default class Price {
     constructor(data) {
-        this.rate = data.bpi.USD.rate
+        this.rate = data
     }
 
     priceTemplate() {
