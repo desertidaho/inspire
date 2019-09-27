@@ -12,7 +12,7 @@ function _drawTodos() {
         `
 		} else {
 			template += `
-        <li onclick="app.controllers.todoController.getTodos()">&bull + " " + ${t.description} &ensp;<input type="checkbox" class="todo-checkbox mt-2" name="completed"
+        <li onclick="app.controllers.todoController.getTodos()">${t.description} &ensp;<input type="checkbox" class="todo-checkbox mt-2" name="completed"
 				 onclick="app.controllers.todoController.toggleTodoStatus('${t._id}')"></li>
 				`
 		}
