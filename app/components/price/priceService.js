@@ -33,7 +33,7 @@ export default class PriceService {
     getPrice() {
         _priceApi.get()
             .then(res => {
-                _setState('price', new Price(res.bpi.USD.rate))
+                _setState('price', new Price(res.data.bpi.USD.rate))
             })
     }
 
