@@ -3,7 +3,7 @@ import ImageController from "./components/image/imageController.js";
 import TodoController from "./components/todo/todoController.js";
 import QuoteController from "./components/quote/quote-controller.js";
 import GreetingController from "./components/greeting/greetingController.js";
-import PriceController from "./components/prices/priceController.js";
+import PriceController from "./components/price/priceController.js";
 
 class App {
   constructor() {
