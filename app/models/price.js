@@ -3,7 +3,7 @@ export default class Price {
         this.rate = data.rate
     }
 
-    quoteTemplate() {
+    priceTemplate() {
         return `
       <div class="" id="price-div">
           <h6 class="text-white font-italic mt-1">${this.rate}</h6> 
