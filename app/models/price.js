@@ -6,7 +6,7 @@ export default class Price {
     priceTemplate() {
         return `
       <div class="" id="price-div">
-          <h6 class="text-white mt-1">Bitcoin ${this.rate}</h6> 
+          <h5 class="text-white mt-1">Bitcoin ${this.rate}</h5> 
       </div>
           `
     }
