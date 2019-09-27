@@ -14,6 +14,7 @@ export default class PriceController {
         _ps.addSubscriber('cryptoPrice', drawPrice)
         _ps.getCryptoPrice()
         _ps.getMetalPrice()
+        _ps.refresh()
     }
 
 }

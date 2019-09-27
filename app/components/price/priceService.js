@@ -51,6 +51,10 @@ export default class PriceService {
             })
     }
 
+    refresh() {
+        setInterval(this.getCryptoPrice, 20000);
+    }
+
     getMetalPrice() {
         _metalPriceApi.get()
             .then(res => {
