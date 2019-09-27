@@ -2,7 +2,9 @@ import Price from "../../models/price.js";
 
 // @ts-ignore
 const _priceApi = axios.create({
-    baseURL: 'https://api.coindesk.com/v1/bpi/currentprice/usd.json',
+    //baseURL: 'https://api.coindesk.com/v1/bpi/currentprice/usd.json',
+    //baseURL: 'https://api.blockchain.info/stats',
+    baseURL: 'https://api.coincap.io/v2/assets',
     timeout: 6000
 });
 
@@ -33,7 +35,7 @@ export default class PriceService {
     getPrice() {
         _priceApi.get()
             .then(res => {
-                _setState('price', new Price(res.data.bpi.USD.rate))
+                _setState('price', new Price(res.data.data))
             })
     }
 

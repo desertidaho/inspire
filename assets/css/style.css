@@ -26,7 +26,7 @@ body {
     opacity: 0.6;
     padding: 1.5vh 1.5vw;
     letter-spacing: 0.1rem;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 #todos {
@@ -80,7 +80,7 @@ li {
     letter-spacing: 0.1rem;
     padding: 1.5vh 1.5vw;
     font-size: 0.97rem;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 #quote-div {
@@ -93,7 +93,7 @@ li {
     padding: 1.5vh 1.5vw;
     letter-spacing: 0.1rem;
     font-weight: 300;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .author {
@@ -140,7 +140,7 @@ li {
     padding: 1.5vh 1.5vw;
     letter-spacing: 0.1rem;
     font-weight: 300;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 #user:hover {
@@ -163,6 +163,15 @@ footer {
 #next-quote {
   text-shadow: 1px 1px black;
   letter-spacing: 0.06rem;
+}
+
+.table-rows {
+  line-height: 1.5rem;
+}
+
+.table-header {
+  line-height: 2.4rem;
+  font-size: 1.1rem;
 }
 
 
