@@ -30,7 +30,7 @@ function _drawTodos() {
 
 	//add todo input form
 	document.querySelector('#todo-form').innerHTML = `
-        <form onsubmit="app.controllers.todoController.addTodo(event)">
+        <form onsubmit="app.controllers.todoController.addTodo(event)" class="mt-4">
           <input required id="todo-input" type="text" class="todo-form" name="description" placeholder=" New todo...">
 					<button class="btn btn-sm btn-outline-success shadow todo-btn mb-1" type="submit">Add</button>  <span class="completed">Completed <i class="fas fa-check"></i></span>	
         </form>

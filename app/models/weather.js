@@ -15,7 +15,7 @@ export default class Weather {
     weatherTemplate() {
         return `
       <div class="text-white" id="weather-div">
-				  <h5 class="mt-1">${this.city} Weather &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;<img id=wx-icon" src="https://openweathermap.org/img/w/${this.icon}.png"> </h5>
+				  <h5 class="">${this.city} Weather &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;<img id=wx-icon" src="https://openweathermap.org/img/w/${this.icon}.png"> </h5>
 				  <p>Sky condition: ${this.description}</p>
 				  <p class="weather-p">Temperature: ${this.celcius}°C &nbsp ${this.farenheit}°F</p>
           <p>Wind from: <span class="wind-p"> ${this.windDegrees}° @ ${this.windSpeed} </span> kts.</p>
