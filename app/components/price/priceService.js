@@ -1,5 +1,5 @@
 import CryptoPrice from "../../models/cryptoPrice.js";
-// import MetalPrice from "../../models/metalPrice.js";
+import MetalPrice from "../../models/metalPrice.js";
 
 // @ts-ignore
 const _cryptoPriceApi = axios.create({
@@ -11,13 +11,9 @@ const _cryptoPriceApi = axios.create({
 
 // @ts-ignore
 const _metalPriceApi = axios.create({
-    headers: { 'Access-Control-Allow-Origin': '*', },
-    proxy: {
-        host: '127.0.0.1',
-        port: 5500
-    },
-    baseURL: 'http://metals-api.com/api/latest?access_key=4g3r8a3temxq2y1wruyi0v194r399it0g4w0ik0e21nj3o2797ubkr18qv7d8p55',
-    timeout: 6000
+    baseURL: 'https://metals-api.com/api/latest',
+    timeout: 6000,
+    params: { access_key: '4g3r8a3temxq2y1wruyi0v194r399it0g4w0ik0e21nj3o2797ubkr18qv7d8p55' }
 });
 
 let _state = {
@@ -64,7 +60,7 @@ export default class PriceService {
     getMetalPrice() {
         _metalPriceApi.get()
             .then(res => {
-                _setState('metalPrice', new MetalPrice(res.data))
+                _setState('metalPrice', new MetalPrice(res.data.data))
             })
     }
 
