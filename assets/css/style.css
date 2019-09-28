@@ -133,7 +133,7 @@ li {
 #price-div {
     background: black;
     color: white;
-    text-shadow: 0.2px 0.9px orange;
+    text-shadow: 0.2px 0.9px red;
     border: transparent;
     line-height: 0.3rem;
     opacity: 0.6;
@@ -172,6 +172,10 @@ footer {
 .table-header {
   line-height: 2.4rem;
   font-size: 1.1rem;
+}
+
+#change24 {
+  font-size: 0.99rem;
 }
 
 

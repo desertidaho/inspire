@@ -1,4 +1,8 @@
-export default class Price {
+import MetalPrice from "./metalPrice.js";
+
+let metalPrices = new MetalPrice();
+
+export default class CryptoPrice {
     constructor(data) {
         this.btc = data[0].id;
         this.btcName = this.btc.charAt(0).toUpperCase() + this.btc.slice(1)
@@ -14,9 +18,6 @@ export default class Price {
         this.ltcName = this.ltc.charAt(0).toUpperCase() + this.ltc.slice(1)
         this.ltcPrice = '$' + Number(data[5].priceUsd).toFixed(2);
         this.ltc24HourChange = Number(data[5].changePercent24Hr).toFixed(2);
-
-        this.goldPrice = '$1500.35';
-        this.gold24HourChange = '0.58';
     }
 
     priceTemplate() {
@@ -24,7 +25,7 @@ export default class Price {
         <tr class="table-header">
 		    <th width="50%"></th>
 			<th width="45%">Price</th>
-			<th width="10%">Change/24hr</th>
+			<th id="change24" width="10%">Change/24hr</th>
         </tr>
         <tr class="table-rows">
             <td>${this.btcName}</td>
@@ -40,6 +41,11 @@ export default class Price {
             <td>${this.ltcName}</td>
             <td>${this.ltcPrice}</td>
             <td align="center">${this.ltc24HourChange}%</td>
+        </tr>
+        <tr class="table-rows">
+            <td>Gold</td>
+            <td>${metalPrices.goldPrice}</td>
+            <td align="center">${metalPrices.gold24HourChange}%</td>
         </tr>
           `
     }
