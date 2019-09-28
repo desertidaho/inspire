@@ -1,5 +1,5 @@
 import CryptoPrice from "../../models/cryptoPrice.js";
-import MetalPrice from "../../models/metalPrice.js";
+// import MetalPrice from "../../models/metalPrice.js";
 
 // @ts-ignore
 const _cryptoPriceApi = axios.create({
