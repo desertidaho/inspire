@@ -42,11 +42,6 @@ export default class CryptoPrice {
             <td>${this.ltcPrice}</td>
             <td align="center">${this.ltc24HourChange}%</td>
         </tr>
-        <tr class="table-rows">
-            <td>Gold</td>
-            <td>${metalPrices.goldPrice}</td>
-            <td align="center">${metalPrices.gold24HourChange}%</td>
-        </tr>
           `
     }
 
