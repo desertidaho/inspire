@@ -64,7 +64,7 @@ export default class PriceService {
     getMetalPrice() {
         _metalPriceApi.get()
             .then(res => {
-                _setState('metalPrice', new MetalPrice(res.data.rates))
+                _setState('metalPrice', new MetalPrice(res.data))
             })
     }
 
