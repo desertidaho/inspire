@@ -1,8 +1,8 @@
-import CryptoPrice from "../../models/cryptoPrice.js";
+import Price from "../../models/price.js";
 import MetalPrice from "../../models/metalPrice.js";
 
 // @ts-ignore
-const _cryptoPriceApi = axios.create({
+const _priceApi = axios.create({
     //baseURL: 'https://api.coindesk.com/v1/bpi/currentprice/usd.json',
     //baseURL: 'https://api.blockchain.info/stats',
     baseURL: 'https://api.coincap.io/v2/assets',
@@ -19,13 +19,13 @@ const _metalPriceApi = axios.create({
 });
 
 let _state = {
-    cryptoPrice: {},
+    price: {},
     goldPrice: {},
     silverPrice: {}
 }
 
 let _subscribers = {
-    cryptoPrice: [],
+    price: [],
     goldPrice: [],
     silverPrice: []
 }
@@ -42,8 +42,8 @@ export default class PriceService {
         _subscribers[prop].push(fn)
     }
 
-    get CryptoPrice() {
-        return _state.cryptoPrice
+    get Price() {
+        return _state.price
     }
 
     get GoldPrice() {
@@ -54,24 +54,21 @@ export default class PriceService {
         return _state.silverPrice
     }
 
-    getCryptoPrice() {
-        _cryptoPriceApi.get()
+    getPrice() {
+        _priceApi.get()
             .then(res => {
-                _setState('cryptoPrice', new CryptoPrice(res.data.data))
+                _setState('price', new Price(res.data.data))
             })
     }
 
     refresh() {
-        setInterval(this.getCryptoPrice, 20000);
+        setInterval(this.getPrice, 20000);
     }
 
     getMetalPrice() {
         _metalPriceApi.get()
             .then(res => {
-                let goldPrice = res.data.rates.XAU
-                let silverPrice = res.data.rates.XAG
-                _setState('goldPrice', goldPrice)
-                _setState('silverPrice', silverPrice)
+                _setState('goldPrice', new MetalPrice(res.data.rates))
             })
     }
 

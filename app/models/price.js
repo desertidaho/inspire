@@ -1,6 +1,4 @@
-import MetalPrice from "./metalPrice.js";
-
-export default class CryptoPrice {
+export default class Price {
     constructor(data) {
         this.btc = data[0].id;
         this.btcName = this.btc.charAt(0).toUpperCase() + this.btc.slice(1)
@@ -22,7 +20,7 @@ export default class CryptoPrice {
         return `
         <tr class="table-header">
 		    <th width="50%"></th>
-			<th width="45%">Price</th>
+			<th width="40%">Price</th>
 			<th id="change24" width="10%">Change/24hr</th>
         </tr>
         <tr class="table-rows">
@@ -35,7 +33,7 @@ export default class CryptoPrice {
             <td>${this.ethPrice}</td>
             <td align="center">${this.eth24HourChange}%</td>
         </tr>
-         <tr class="table-rows">
+        <tr class="table-rows">
             <td>${this.ltcName}</td>
             <td>${this.ltcPrice}</td>
             <td align="center">${this.ltc24HourChange}%</td>
