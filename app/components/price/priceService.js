@@ -11,19 +11,23 @@ const _cryptoPriceApi = axios.create({
 
 // @ts-ignore
 const _metalPriceApi = axios.create({
-    baseURL: 'https://metals-api.com/api/latest',
+    baseURL: 'https://cors-anywhere.herokuapp.com/https://metals-api.com/api/latest',
     timeout: 6000,
-    params: { access_key: '4g3r8a3temxq2y1wruyi0v194r399it0g4w0ik0e21nj3o2797ubkr18qv7d8p55' }
+    headers: { content_type: 'application/x-www-form-urlencoded' },
+    params: { access_key: '4g3r8a3temxq2y1wruyi0v194r399it0g4w0ik0e21nj3o2797ubkr18qv7d8p55' },
+
 });
 
 let _state = {
     cryptoPrice: {},
-    metalPrice: {}
+    goldPrice: {},
+    silverPrice: {}
 }
 
 let _subscribers = {
     cryptoPrice: [],
-    metalPrice: []
+    goldPrice: [],
+    silverPrice: []
 }
 
 function _setState(prop, data) {
@@ -42,8 +46,12 @@ export default class PriceService {
         return _state.cryptoPrice
     }
 
-    get MetalPrice() {
-        return _state.metalPrice
+    get GoldPrice() {
+        return _state.goldPrice
+    }
+
+    get SilverPrice() {
+        return _state.silverPrice
     }
 
     getCryptoPrice() {
@@ -60,7 +68,10 @@ export default class PriceService {
     getMetalPrice() {
         _metalPriceApi.get()
             .then(res => {
-                _setState('metalPrice', new MetalPrice(res.data.data))
+                let goldPrice = res.data.rates.XAU
+                let silverPrice = res.data.rates.XAG
+                _setState('goldPrice', goldPrice)
+                _setState('silverPrice', silverPrice)
             })
     }
 

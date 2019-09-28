@@ -1,7 +1,5 @@
 import MetalPrice from "./metalPrice.js";
 
-let metalPrices = new MetalPrice();
-
 export default class CryptoPrice {
     constructor(data) {
         this.btc = data[0].id;
