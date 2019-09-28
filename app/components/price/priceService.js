@@ -20,13 +20,13 @@ const _metalPriceApi = axios.create({
 
 let _state = {
     price: {},
-    goldPrice: {},
+    metalPrice: {},
     silverPrice: {}
 }
 
 let _subscribers = {
     price: [],
-    goldPrice: [],
+    metalPrice: [],
     silverPrice: []
 }
 
@@ -46,12 +46,8 @@ export default class PriceService {
         return _state.price
     }
 
-    get GoldPrice() {
-        return _state.goldPrice
-    }
-
-    get SilverPrice() {
-        return _state.silverPrice
+    get MetalPrice() {
+        return _state.metalPrice
     }
 
     getPrice() {
@@ -61,15 +57,16 @@ export default class PriceService {
             })
     }
 
-    refresh() {
-        setInterval(this.getPrice, 20000);
-    }
-
     getMetalPrice() {
         _metalPriceApi.get()
             .then(res => {
-                _setState('goldPrice', new MetalPrice(res.data.rates))
+                _setState('metalPrice', new MetalPrice(res.data.rates))
             })
+    }
+
+    refresh() {
+        setInterval(this.getPrice, 20000);
+        setInterval(this.getMetalPrice, 60000);
     }
 
 }

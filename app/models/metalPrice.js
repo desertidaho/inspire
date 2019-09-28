@@ -4,7 +4,7 @@ export default class MetalPrice {
     this.silverPrice = '$' + Number(info.XAG).toFixed(2);
   }
 
-  goldPriceTemplate() {
+  metalPriceTemplate() {
     return `
         <tr class="table-rows">
             <td width="61.7%">Gold</td>
