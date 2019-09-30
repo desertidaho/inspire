@@ -6,7 +6,7 @@ const _priceApi = axios.create({
     //baseURL: 'https://api.coindesk.com/v1/bpi/currentprice/usd.json',
     //baseURL: 'https://api.blockchain.info/stats',
     baseURL: 'https://api.coincap.io/v2/assets',
-    timeout: 6000
+    timeout: 15000
 });
 
 // @ts-ignore
@@ -20,14 +20,12 @@ const _metalPriceApi = axios.create({
 
 let _state = {
     price: {},
-    metalPrice: {},
-    silverPrice: {}
+    metalPrice: {}
 }
 
 let _subscribers = {
     price: [],
-    metalPrice: [],
-    silverPrice: []
+    metalPrice: []
 }
 
 function _setState(prop, data) {
