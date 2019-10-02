@@ -29,6 +29,7 @@ function drawNewUser() {
   let newUser = _greetingService.NewUser.name
   window.localStorage.setItem('name', JSON.stringify(newUser))
   document.querySelector('#user').innerHTML = newUser
+  // @ts-ignore
   document.querySelector('#user-form').style.visibility = "hidden"
 }
 
