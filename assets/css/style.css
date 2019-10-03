@@ -178,6 +178,10 @@ footer {
   font-size: 0.99rem;
 }
 
+#news {
+  color: white;
+}
+
 
 @media (hover: none) {
 
