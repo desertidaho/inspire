@@ -4,6 +4,7 @@ export default class Weather {
         this.description = data.weather[0].description
         this.kelvin = data.main.temp
         this.celcius = (this.kelvin - 273.15).toFixed(0)
+        // @ts-ignore
         this.farenheit = (this.celcius * (9 / 5) + 32).toFixed(0)
         this.windDegrees = data.wind.deg
         this.windSpeed = data.wind.speed
@@ -15,7 +16,8 @@ export default class Weather {
     weatherTemplate() {
         return `
       <div class="text-white" id="weather-div">
-				  <h5 class="">${this.city} Weather &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;<img id=wx-icon" src="https://openweathermap.org/img/w/${this.icon}.png"> </h5>
+                  <h5 class=""><span data-toggle="tooltip" title="Change City" onclick="app.controllers.weatherController.changeCity()" id="user">
+                  ${this.city}</span> Weather &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; &ensp;<img id=wx-icon" src="https://openweathermap.org/img/w/${this.icon}.png"> </h5>
 				  <p>Sky condition: ${this.description}</p>
 				  <p class="weather-p">Temperature: ${this.celcius}°C &nbsp ${this.farenheit}°F</p>
           <p>Wind from: <span class="wind-p"> ${this.windDegrees}° @ ${this.windSpeed} </span> kts.</p>
