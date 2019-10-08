@@ -12,7 +12,6 @@ export default class MetalPrice {
 
   metalPriceTemplate() {
     return `
-       
         <tr class="table-rows">
             <td width="61.7%">Gold</td>
             <td width="">${this.goldPrice}</td>

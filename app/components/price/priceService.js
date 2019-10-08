@@ -3,8 +3,6 @@ import MetalPrice from "../../models/metalPrice.js";
 
 // @ts-ignore
 const _priceApi = axios.create({
-    //baseURL: 'https://api.coindesk.com/v1/bpi/currentprice/usd.json',
-    //baseURL: 'https://api.blockchain.info/stats',
     baseURL: 'https://api.coincap.io/v2/assets',
     timeout: 15000
 });
@@ -17,17 +15,18 @@ const _metalPriceApi = axios.create({
     // params: { access_key: '4g3r8a3temxq2y1wruyi0v194r399it0g4w0ik0e21nj3o2797ubkr18qv7d8p55' },
     baseURL: 'https://api.coincap.io/v2/rates',
     timeout: 15000
-
 });
 
 let _state = {
     price: {},
-    metalPrice: {}
+    metalPrice: {},
+    marketCap: {}
 }
 
 let _subscribers = {
     price: [],
-    metalPrice: []
+    metalPrice: [],
+    marketCap: []
 }
 
 function _setState(prop, data) {
@@ -48,6 +47,10 @@ export default class PriceService {
 
     get MetalPrice() {
         return _state.metalPrice
+    }
+
+    get MarketCap() {
+        return _state.marketCap
     }
 
     getPrice() {

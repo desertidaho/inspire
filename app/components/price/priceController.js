@@ -12,11 +12,17 @@ function drawMetalPrice() {
     document.querySelector('#metals').innerHTML = template
 }
 
+function drawMarketCap() {
+    let template = _ps.Price.marketCapTemplate()
+    document.querySelector('#market-cap').innerHTML = template
+}
+
 
 //Public
 export default class PriceController {
     constructor() {
         _ps.addSubscriber('price', drawPrice)
+        _ps.addSubscriber('price', drawMarketCap)
         _ps.addSubscriber('metalPrice', drawMetalPrice)
         _ps.getPrice()
         _ps.getMetalPrice()

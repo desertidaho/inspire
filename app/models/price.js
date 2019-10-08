@@ -39,6 +39,18 @@ export default class Price {
             }
         }
 
+        this.marketCapUsd = 0
+        for (let i = 0; i < data.length; i++) {
+            this.marketCapUsd += parseInt(Number(data[i].marketCapUsd).toFixed())
+        };
+        this.marketCapUsd = this.marketCapUsd + 7000000000
+        this.marketCapUsd = ('$' + this.marketCapUsd).slice(0, 4) + '.' + ('' + this.marketCapUsd).slice(4, 6) + ' Billion'
+    }
+
+    marketCapTemplate() {
+        return `
+        ${this.marketCapUsd}
+        `
     }
 
     priceTemplate() {
