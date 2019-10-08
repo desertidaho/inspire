@@ -23,21 +23,8 @@
 			<!-- left column -->
 			<div class="col-12 col-md-3 mt-3 d-flex flex-column justify-content-start">
 
-				<!-- prices-->
-				<div id="price-div">
-					<table id="price">
-						<!--insert crypto prices-->
-					</table>
-					<table id="goldPrice">
-						<!--insert gold prices-->
-					</table>
-					<table id="silverPrice">
-						<!--insert silver prices-->
-					</table>
-				</div>
-
 				<!-- todos -->
-				<div id="todo-div" class="text-white mt-2">
+				<div id="todo-div" class="text-white">
 					<h5 class="mt-1">Todo List,<span id="num-of-todos"></span></h5>
 					<div id="todo-error">
 						<!-- error message here -->
@@ -55,10 +42,28 @@
 					<!-- Your Weather Template -->
 				</div>
 
-				<!-- quote -->
-				<div id="quote" class="mt-2">
-					The Quote
+				<!-- prices-->
+				<div id="price-div" class=" mt-2">
+					<table id="price">
+						<!--insert crypto prices-->
+					</table>
+					<table id="goldPrice">
+						<!--insert gold prices-->
+					</table>
+					<table id="silverPrice">
+						<!--insert silver prices-->
+					</table>
+					<a href="https://brettwilcox.info/Crypto/" target="_blank" id="news" class="float-right"><button
+							class="btn btn-sm btn-outline-light shadow-lg mt-3" id="next-img">Crypto News<i
+								class="fas fa-arrow-right ml-2"></i></button></a>
 				</div>
+
+				<!-- quote 
+					<div id="quote" class="mt-2">
+						The Quote
+					</div>
+				-->
+
 			</div>
 
 			<!-- right column -->
@@ -101,9 +106,6 @@
 
 		<footer class="row">
 			<div class="col-12 d-flex justify-content-end">
-				<a href="https://brettwilcox.info/Crypto/" target="_blank" id="news" class="mr-2"><button
-						class="btn btn-sm btn-outline-light shadow-lg mr-3" id="next-img">Crypto News<i
-							class="fas fa-check ml-2"></i></button></a>
 				<button class="btn btn-sm btn-outline-light shadow-lg" id="next-img"
 					onclick="app.controllers.imageController.nextImg()">Change Image<i
 						class="fas fa-arrow-right ml-2"></i></button>
