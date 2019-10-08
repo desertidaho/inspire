@@ -151,6 +151,19 @@ li {
   margin-left: 23vw;
 }
 
+#metals-div {
+    background: black;
+    color: white;
+    text-shadow: 0.2px 0.9px red;
+    border: transparent;
+    line-height: 0.3rem;
+    opacity: 0.6;
+    padding: 1.5vh 1.5vw;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+    border-radius: 5px;
+}
+
 footer {
     position: fixed;
     height: auto;

@@ -9,7 +9,7 @@ function drawPrice() {
 
 function drawMetalPrice() {
     let template = _ps.MetalPrice.metalPriceTemplate()
-    document.querySelector('#goldPrice').innerHTML = template
+    document.querySelector('#metals').innerHTML = template
 }
 
 
@@ -19,7 +19,7 @@ export default class PriceController {
         _ps.addSubscriber('price', drawPrice)
         _ps.addSubscriber('metalPrice', drawMetalPrice)
         _ps.getPrice()
-        // _ps.getMetalPrice()
+        _ps.getMetalPrice()
         _ps.refresh()
     }
 
