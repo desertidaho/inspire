@@ -195,6 +195,10 @@ footer {
   color: white;
 }
 
+.table-header {
+  text-decoration: underline;
+}
+
 
 @media (hover: none) {
 

@@ -68,7 +68,8 @@ export default class PriceService {
     }
 
     refresh() {
-        setInterval(this.getPrice, 20000);
+        setInterval(this.getPrice, 20000)
+        setInterval(this.getMetalPrice, 600000)
     }
 
 }
