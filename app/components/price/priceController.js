@@ -26,7 +26,7 @@ export default class PriceController {
         _ps.addSubscriber('price', drawMarketCap)
         _ps.addSubscriber('metalPrice', drawMetalPrice)
         _ps.getPrice()
-        _ps.getMetalPrice()
+        //_ps.getMetalPrice()
         _ps.refresh()
     }
 

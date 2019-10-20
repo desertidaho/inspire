@@ -199,7 +199,8 @@ footer {
   text-decoration: underline;
 }
 
-#forecast {
+#forecast,
+#news {
   float: right;
 }
 
