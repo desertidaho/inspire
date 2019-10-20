@@ -1,6 +1,7 @@
 // @ts-ignore
 const _imgApi = axios.create({
 	baseURL: '//bcw-sandbox.herokuapp.com/api/images',
+	//baseURL: 'https://cors-anywhere.herokuapp.com/https://picsum.photos/v2/list',
 	timeout: 15000
 });
 
