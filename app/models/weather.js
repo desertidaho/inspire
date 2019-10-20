@@ -11,6 +11,7 @@ export default class Weather {
         this.sunrise = '0' + (parseInt(new Date(data.sys.sunrise * 1e3).toISOString().slice(-13, -11)) - 6) + new Date(data.sys.sunrise * 1e3).toISOString().slice(-11, -8)
         this.sunset = (Math.abs(parseInt(new Date(data.sys.sunset * 1e3).toISOString().slice(-13, -11)) - 12) + 6) + new Date(data.sys.sunset * 1e3).toISOString().slice(-11, -8)
         this.icon = data.weather[0].icon
+        this.cityId = data.id
     }
 
     weatherTemplate() {
@@ -23,7 +24,12 @@ export default class Weather {
           <p>Wind from: <span class="wind-p"> ${this.windDegrees}° @ ${this.windSpeed} </span> kts.</p>
           <p>Sunrise: ${this.sunrise}</p>
           <p>Sunset: ${this.sunset}</p>
-		  </div>
+          </div>
+          <div>
+						<button class="btn btn-sm btn-outline-light shadow-lg" id="forecast"
+							onclick="app.controllers.weatherController.forecast()">Forecast<i
+								class="fas fa-arrow-right ml-2"></i></button>
+					</div>
           `
     }
 

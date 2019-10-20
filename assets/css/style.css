@@ -199,6 +199,10 @@ footer {
   text-decoration: underline;
 }
 
+#forecast {
+  float: right;
+}
+
 @media (hover: none) {
 
   body {

@@ -15,12 +15,17 @@ function drawCityForm() {
 	document.querySelector('#city-form').innerHTML = template
 }
 
+function drawForecastWeather() {
+	_weatherService.ForecastWx.forecastWeatherTemplate()
+}
+
 
 //Public
 export default class WeatherController {
 	constructor() {
 		_weatherService.addSubscriber('weather', drawWeather)
 		_weatherService.addSubscriber('changeCity', drawCityForm)
+		_weatherService.addSubscriber('forecastWx', drawForecastWeather)
 		_weatherService.getWeather()
 	}
 
@@ -40,6 +45,11 @@ export default class WeatherController {
 		form.reset()
 		// @ts-ignore
 		document.querySelector('#city-form').style.visibility = "hidden"
+	}
+
+	forecast() {
+		let cityId = _weatherService.Weather.cityId
+		_weatherService.getForecast(cityId)
 	}
 
 }

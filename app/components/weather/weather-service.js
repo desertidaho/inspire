@@ -1,4 +1,5 @@
 import Weather from "../../models/weather.js";
+import ForecastWeather from "../../models/forecastWeather.js";
 
 // @ts-ignore
 const _weatherApi = axios.create({
@@ -10,13 +11,15 @@ const _weatherApi = axios.create({
 let _state = {
 	weather: {},
 	changeCity: "",
-	newCity: {}
+	newCity: {},
+	forecastWx: {}
 }
 
 let _subscribers = {
 	weather: [],
 	changeCity: [],
-	newCity: []
+	newCity: [],
+	forecastWx: []
 }
 
 function _setState(prop, data) {
@@ -38,6 +41,10 @@ export default class WeatherService {
 
 	get NewCity() {
 		return _state.newCity.name
+	}
+
+	get ForecastWx() {
+		return _state.forecastWx
 	}
 
 	getWeather() {
@@ -67,6 +74,18 @@ export default class WeatherService {
 	addCity(newCity) {
 		_setState('newCity', newCity)
 		this.getNewCityWeather(newCity)
+	}
+
+	getForecast(cityId) {
+		let base = "https://api.openweathermap.org/data/2.5/forecast?appid=bf264f973fd98424c688abafb6a2434f&id=" + cityId
+		// @ts-ignore
+		axios.create({
+			baseURL: base,
+			timeout: 1500
+		}).get()
+			.then(res => {
+				_setState('forecastWx', new ForecastWeather(res.data.list))
+			})
 	}
 
 }
