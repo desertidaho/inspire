@@ -9,7 +9,7 @@ export default class Weather {
         this.windDegrees = data.wind.deg
         this.windSpeed = data.wind.speed
         this.sunrise = '0' + (parseInt(new Date(data.sys.sunrise * 1e3).toISOString().slice(-13, -11)) - 6) + new Date(data.sys.sunrise * 1e3).toISOString().slice(-11, -8)
-        this.sunset = (Math.abs(parseInt(new Date(data.sys.sunset * 1e3).toISOString().slice(-13, -11)) - 12) + 8) + new Date(data.sys.sunset * 1e3).toISOString().slice(-11, -8)
+        this.sunset = (Math.abs(parseInt(new Date(data.sys.sunset * 1e3).toISOString().slice(-13, -11)) - 12) + 6) + new Date(data.sys.sunset * 1e3).toISOString().slice(-11, -8)
         this.icon = data.weather[0].icon
     }
 
