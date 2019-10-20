@@ -6,36 +6,54 @@ export default class Price {
                 this.btcName = data[i].name
                 this.btcPrice = '$' + Number(data[i].priceUsd).toFixed(2)
                 this.btc24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
+                if (this.btc24HourChange >= 0) {
+                    this.btc24HourChange = '+' + this.btc24HourChange
+                }
             }
             if (data[i].id == 'ethereum') {
                 this.ethRank = data[i].rank
                 this.ethName = data[i].name
                 this.ethPrice = '$' + Number(data[i].priceUsd).toFixed(2);
                 this.eth24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
+                if (this.eth24HourChange >= 0) {
+                    this.eth24HourChange = '+' + this.eth24HourChange
+                }
             }
             if (data[i].id == 'ripple') {
                 this.xrpRank = data[i].rank
                 this.xrpName = data[i].name
                 this.xrpPrice = '$' + Number(data[i].priceUsd).toFixed(2);
                 this.xrp24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
+                if (this.xrp24HourChange >= 0) {
+                    this.xrp24HourChange = '+' + this.xrp24HourChange
+                }
             }
             if (data[i].id == 'litecoin') {
                 this.ltcRank = data[i].rank
                 this.ltcName = data[i].name
                 this.ltcPrice = '$' + Number(data[i].priceUsd).toFixed(2);
                 this.ltc24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
+                if (this.ltc24HourChange >= 0) {
+                    this.ltc24HourChange = '+' + this.ltc24HourChange
+                }
             }
             if (data[i].id == 'stellar') {
                 this.xlmRank = data[i].rank
                 this.xlmName = data[i].name
                 this.xlmPrice = '$' + Number(data[i].priceUsd).toFixed(2);
                 this.xlm24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
+                if (this.xlm24HourChange >= 0) {
+                    this.xlm24HourChange = '+' + this.xlm24HourChange
+                }
             }
             if (data[i].id == 'chainlink') {
                 this.linkRank = data[i].rank
                 this.linkName = data[i].name
                 this.linkPrice = '$' + Number(data[i].priceUsd).toFixed(2);
                 this.link24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
+                if (this.link24HourChange >= 0) {
+                    this.link24HourChange = '+' + this.link24HourChange
+                }
             }
         }
 
