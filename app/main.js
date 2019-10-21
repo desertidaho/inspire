@@ -11,7 +11,7 @@ class App {
       weatherController: new WeatherController(),
       imageController: new ImageController(),
       todoController: new TodoController(),
-      //quoteController: new QuoteController(),
+      quoteController: new QuoteController(),
       greetingController: new GreetingController(),
       priceController: new PriceController()
     }

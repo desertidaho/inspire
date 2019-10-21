@@ -29,6 +29,11 @@ body {
     border-radius: 5px;
 }
 
+#forecast,
+#news {
+  letter-spacing: 0.1rem;
+}
+
 #todos {
   color: white;
   text-shadow: 0.2px 0.2px rgb(4, 228, 4);
