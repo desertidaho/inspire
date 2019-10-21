@@ -93,7 +93,7 @@ export default class Price {
         </tr>
         <tr class="table-rows">
             <td>${this.xrpRank}</td>
-            <td>${this.xrpName}</td>
+            <td>Ripple</td>
             <td>${this.xrpPrice}</td>
             <td align="right">${this.xrp24HourChange}%</td>
         </tr>
