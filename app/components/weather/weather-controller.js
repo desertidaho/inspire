@@ -17,6 +17,8 @@ function drawCityForm() {
 
 function drawForecastWeather() {
 	_weatherService.ForecastWx.forecastWeatherTemplate()
+	let template = _weatherService.ForecastWx.modalWx()
+	document.querySelector('#modal-wx').innerHTML = template
 }
 
 
@@ -50,6 +52,11 @@ export default class WeatherController {
 	forecast() {
 		let cityId = _weatherService.Weather.cityId
 		_weatherService.getForecast(cityId)
+	}
+
+	closeModal() {
+		// @ts-ignore
+		$('#startModal').modal('hide')
 	}
 
 }

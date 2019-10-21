@@ -11,7 +11,14 @@ export default class ForecastWeather {
   }
 
   forecastWeatherTemplate() {
-    alert(`Tomorrow the sky condition will be ${this.description}, temperature ${this.farenheit} degrees Farenheit, wind from ${this.windDegrees} at ${this.windSpeed}kts.  Have a nice day!`)
+    // @ts-ignore
+    $('#startModal').modal('show')
+  }
+
+  modalWx() {
+    return `
+    Tomorrow the sky condition will be ${ this.description}, temperature ${this.farenheit} degrees Farenheit, wind from ${this.windDegrees} at ${this.windSpeed} kts.
+    `
   }
 
 }
