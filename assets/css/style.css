@@ -178,7 +178,9 @@ footer {
 }
 
 #next-img,
-#next-quote {
+#next-quote, 
+#music-btn, 
+#forecast {
   text-shadow: 1px 1px black;
   letter-spacing: 0.06rem;
 }
