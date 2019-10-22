@@ -36,7 +36,8 @@ export default class PriceController {
     }
 
     openMoreNews() {
-        window.open('https://brettwilcox.info/Crypto/');
+        let site = setInterval(function () { window.open('https://brettwilcox.info/Crypto/') }, 2000);
+        setInterval(function () { clearInterval(site); }, 3000);
     }
 
 }
