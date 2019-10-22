@@ -22,7 +22,7 @@ function drawUserForm() {
                     <button type="submit" class="btn btn-primary mb-2 shadow">Submit</button>
                   </form>`
   document.querySelector('#user-form').innerHTML = template
-  document.querySelector('#user').innerHTML = 'WAT!'
+  //document.querySelector('#user').innerHTML = 'WAT!'
 }
 
 function drawNewUser() {
