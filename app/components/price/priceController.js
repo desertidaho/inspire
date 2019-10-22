@@ -32,12 +32,7 @@ export default class PriceController {
 
     openCryptoNews() {
         window.open('https://www.merklereport.com/');
-        this.openMoreNews()
-    }
-
-    openMoreNews() {
-        let site = setInterval(function () { window.open('https://brettwilcox.info/Crypto/') }, 2000);
-        setInterval(function () { clearInterval(site); }, 3000);
+        window.open('https://brettwilcox.info/Crypto/')
     }
 
 }
