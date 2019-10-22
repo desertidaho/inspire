@@ -180,7 +180,8 @@ footer {
 #next-img,
 #next-quote, 
 #music-btn, 
-#forecast {
+#forecast,
+#news {
   text-shadow: 1px 1px black;
   letter-spacing: 0.06rem;
 }

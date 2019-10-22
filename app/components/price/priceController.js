@@ -30,5 +30,10 @@ export default class PriceController {
         _ps.refresh()
     }
 
+    openCryptoNews() {
+        window.open('https://www.merklereport.com/');
+        window.open('https://brettwilcox.info/Crypto/');
+    }
+
 }
 
