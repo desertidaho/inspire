@@ -25,8 +25,8 @@ export default class ForecastWeather {
   modalWx() {
     return `
     Sky condition ${ this.description} </br>
-    Temperature ${this.farenheit} degrees F </br>
-    Wind from ${this.windDegrees} at ${this.windSpeed} kts.
+    Temperature ${this.farenheit}°F </br>
+    Wind from ${this.windDegrees} @ ${this.windSpeed} kts.
     `
   }
 
