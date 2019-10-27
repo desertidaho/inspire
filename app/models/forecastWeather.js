@@ -8,6 +8,13 @@ export default class ForecastWeather {
     this.windDegrees = (data[8].wind.deg).toFixed(0)
     this.windSpeed = (data[8].wind.speed).toFixed(0)
     this.icon = data[8].weather[0].icon
+
+    if (this.windDegrees < 10) {
+      this.windDegrees = '00' + this.windDegrees
+    }
+    if (this.windDegrees < 100 && this.windDegrees >= 10) {
+      this.windDegrees = '0' + this.windDegrees
+    }
   }
 
   forecastWeatherTemplate() {
@@ -17,7 +24,9 @@ export default class ForecastWeather {
 
   modalWx() {
     return `
-    Tomorrow the sky condition will be ${ this.description}, temperature ${this.farenheit} degrees Farenheit, wind from ${this.windDegrees} at ${this.windSpeed} kts.
+    Sky condition ${ this.description} </br>
+    Temperature ${this.farenheit} degrees F </br>
+    Wind from ${this.windDegrees} at ${this.windSpeed} kts.
     `
   }
 

@@ -12,6 +12,13 @@ export default class Weather {
         this.sunset = (Math.abs(parseInt(new Date(data.sys.sunset * 1e3).toISOString().slice(-13, -11)) - 12) + 6) + new Date(data.sys.sunset * 1e3).toISOString().slice(-11, -8)
         this.icon = data.weather[0].icon
         this.cityId = data.id
+
+        if (this.windDegrees < 10) {
+            this.windDegrees = '00' + this.windDegrees
+        }
+        if (this.windDegrees < 100 && this.windDegrees >= 10) {
+            this.windDegrees = '0' + this.windDegrees
+        }
     }
 
     weatherTemplate() {
