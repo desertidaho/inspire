@@ -19,7 +19,7 @@ export default class ForecastWeather {
 
   forecastWeatherTemplate() {
     // @ts-ignore
-    $('#startModal').modal('show')
+    $('#forecastModal').modal('show')
   }
 
   modalWx() {
