@@ -13,6 +13,8 @@ let _subscribers = {
 	img: []
 }
 
+let i = 0;
+
 function setState(prop, data) {
 	_state[prop] = data
 	_subscribers[prop].forEach(fn => fn())
@@ -21,6 +23,7 @@ function setState(prop, data) {
 
 //Public
 export default class ImageService {
+
 
 	addSubscriber(prop, fn) {
 		_subscribers[prop].push(fn)
@@ -31,9 +34,10 @@ export default class ImageService {
 	}
 
 	getImgData() {
+		i++
 		_imgApi.get()
 			.then(res => {
-				setState('img', res.data[1].download_url)
+				setState('img', res.data[i].download_url)
 			})
 	}
 
