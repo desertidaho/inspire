@@ -13,7 +13,7 @@ let _subscribers = {
 	img: []
 }
 
-let i = 0;
+let i = -1;
 
 function setState(prop, data) {
 	_state[prop] = data
