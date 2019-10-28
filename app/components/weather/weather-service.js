@@ -54,6 +54,10 @@ export default class WeatherService {
 			})
 	}
 
+	refresh() {
+		setInterval(this.getWeather, 600000)
+	}
+
 	getNewCityWeather(newCity) {
 		let base = "https://api.openweathermap.org/data/2.5/weather?q=" + newCity.name
 		let key = ",us&appid=bf264f973fd98424c688abafb6a2434f"

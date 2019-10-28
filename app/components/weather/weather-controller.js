@@ -29,6 +29,7 @@ export default class WeatherController {
 		_weatherService.addSubscriber('changeCity', drawCityForm)
 		_weatherService.addSubscriber('forecastWx', drawForecastWeather)
 		_weatherService.getWeather()
+		_weatherService.refresh()
 	}
 
 	changeCity() {
