@@ -13,8 +13,6 @@ let _subscribers = {
 	img: []
 }
 
-let i = -1;
-
 function setState(prop, data) {
 	_state[prop] = data
 	_subscribers[prop].forEach(fn => fn())
@@ -34,7 +32,7 @@ export default class ImageService {
 	}
 
 	getImgData() {
-		i = Math.floor((Math.random() * 100) + 1);
+		let i = Math.floor((Math.random() * 100) + 1);
 		_imgApi.get()
 			.then(res => {
 				setState('img', res.data[i].download_url)
