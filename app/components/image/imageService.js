@@ -34,7 +34,7 @@ export default class ImageService {
 	}
 
 	getImgData() {
-		i++
+		i = Math.floor((Math.random() * 100) + 1);
 		_imgApi.get()
 			.then(res => {
 				setState('img', res.data[i].download_url)
