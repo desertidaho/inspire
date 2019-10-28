@@ -2,8 +2,9 @@ import Quote from "../../models/quote.js";
 
 // @ts-ignore
 const _quoteApi = axios.create({
-	baseURL: '//bcw-sandbox.herokuapp.com/api/quotes',
-	timeout: 6000
+	//baseURL: '//bcw-sandbox.herokuapp.com/api/quotes',
+	baseURL: 'https://api.quotable.io/random',
+	timeout: 15000
 });
 
 let _state = {
@@ -33,7 +34,7 @@ export default class QuoteService {
 	getQuote() {
 		_quoteApi.get()
 			.then(res => {
-				_setState('quote', new Quote(res.data.quote))
+				_setState('quote', new Quote(res.data))
 			})
 	}
 

@@ -1,7 +1,7 @@
 // @ts-ignore
 const _imgApi = axios.create({
-	baseURL: '//bcw-sandbox.herokuapp.com/api/images',
-	//baseURL: 'https://cors-anywhere.herokuapp.com/https://picsum.photos/v2/list',
+	//baseURL: '//bcw-sandbox.herokuapp.com/api/images',
+	baseURL: 'https://cors-anywhere.herokuapp.com/https://picsum.photos/v2/list',
 	timeout: 15000
 });
 
@@ -33,7 +33,7 @@ export default class ImageService {
 	getImgData() {
 		_imgApi.get()
 			.then(res => {
-				setState('img', res.data.url)
+				setState('img', res.data[1].download_url)
 			})
 	}
 
