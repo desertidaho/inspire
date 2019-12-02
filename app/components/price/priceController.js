@@ -15,6 +15,7 @@ function drawMetalPrice() {
 function drawMarketCap() {
     let template = _ps.Price.marketCapTemplate()
     document.title = 'Inspire' + '  (Market' + template + ')'
+    document.querySelector('#market-cap').innerHTML = template + " Market Cap"
 }
 
 
