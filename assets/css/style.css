@@ -208,12 +208,17 @@ footer {
 }
 
 #forecast,
-#news {
+#crypto-news {
   float: right;
 }
 
 #market-cap {
   display: none;
+}
+
+#refresh-prices {
+  
+  visibility: hidden;
 }
 
 @media (hover: none) {
