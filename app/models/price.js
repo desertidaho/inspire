@@ -62,13 +62,18 @@ export default class Price {
             this.marketCapUsd += parseInt(Number(data[i].marketCapUsd).toFixed())
         };
         this.marketCapUsd = this.marketCapUsd + 5000000000
-        this.marketCapUsd = ('$' + this.marketCapUsd).slice(0, 4) + '.' + ('' + this.marketCapUsd).slice(4, 6) + ' Billion'
+        this.mcap = this.marketCapUsd
+        this.marketCapUsd = ('$' + this.marketCapUsd).slice(0, 4) + '.' + ('' + this.marketCapUsd).slice(3, 5) + ' Billion'
     }
 
     marketCapTemplate() {
         return `
         ${this.marketCapUsd}
         `
+    }
+
+    mCap() {
+        return this.mcap
     }
 
     priceTemplate() {
@@ -82,7 +87,7 @@ export default class Price {
         <tr class="table-rows">
             <td>${this.btcRank}</td>
             <td>${this.btcName}</td>
-            <td>${this.btcPrice}</td>
+            <td id="btc-price">${this.btcPrice}</td>
             <td align="right">${this.btc24HourChange}%</td>
         </tr>
         <tr class="table-rows">

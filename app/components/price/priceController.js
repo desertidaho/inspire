@@ -1,12 +1,24 @@
 import PriceService from "./priceService.js";
 
 const _ps = new PriceService()
+const mCapArray = []
 
 function drawPrice() {
-    document.getElementById('refresh-prices').style.visibility = "visible"
-    document.getElementById('price-div').style.background = "rgb(4, 228, 4)"
     let template = _ps.Price.priceTemplate()
     document.querySelector('#price').innerHTML = template
+    document.getElementById('refresh-prices').style.visibility = "visible"
+    let mCap = _ps.Price.mCap()
+    mCapArray.push(mCap)
+    if (mCapArray.length == 1) {
+        document.getElementById('price-div').style.background = "black"
+    }
+    else if (mCapArray.length >= 2 && parseInt(mCapArray[0]) <= parseInt(mCapArray[1])) {
+        document.getElementById('price-div').style.background = "rgb(4, 228, 4)"
+    }
+    else {
+        document.getElementById('price-div').style.background = "red"
+    }
+    mCapArray.length >= 2 ? mCapArray.shift() : false
     setTimeout(function () {
         document.getElementById('refresh-prices').style.visibility = "hidden"
     }, 1000);
