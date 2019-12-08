@@ -3,16 +3,19 @@ import Quote from "../../models/quote.js";
 // @ts-ignore
 const _quoteApi = axios.create({
 	//baseURL: '//bcw-sandbox.herokuapp.com/api/quotes',
-	baseURL: 'https://api.quotable.io/random',
+	//baseURL: 'https://api.quotable.io/random',
+	baseURL: 'https://type.fit/api/quotes',
 	timeout: 15000
 });
 
 let _state = {
-	quote: {}
+	quote: {},
+	allQuotes: []
 }
 
 let _subscribers = {
-	quote: []
+	quote: [],
+	allQuotes: []
 }
 
 function _setState(prop, data) {
@@ -31,15 +34,26 @@ export default class QuoteService {
 		return _state.quote
 	}
 
+	get allQuotes() {
+		return _state.allQuotes
+	}
+
 	getQuote() {
+		let i = this.getRandom()
 		_quoteApi.get()
 			.then(res => {
-				_setState('quote', new Quote(res.data))
+				_setState('allQuotes', res.data)
+				_setState('quote', new Quote(res.data, i))
 			})
 	}
 
 	nextQuote() {
-		this.getQuote()
+		let i = this.getRandom()
+		_setState('quote', new Quote(this.allQuotes, i))
+	}
+
+	getRandom() {
+		return Math.floor((Math.random() * 1643) + 1);
 	}
 
 }
