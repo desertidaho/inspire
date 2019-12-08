@@ -7,14 +7,16 @@ const _imgApi = axios.create({
 });
 
 let _state = {
-	img: ''
+	img: '',
+	allImages: []
 }
 
 let _subscribers = {
-	img: []
+	img: [],
+	allImages: []
 }
 
-function setState(prop, data) {
+function _setState(prop, data) {
 	_state[prop] = data
 	_subscribers[prop].forEach(fn => fn())
 }
@@ -32,16 +34,26 @@ export default class ImageService {
 		return _state.img
 	}
 
+	get AllImages() {
+		return _state.allImages
+	}
+
 	getImgData() {
-		let i = Math.floor((Math.random() * 100) + 1);
+		let i = this.getRandom()
 		_imgApi.get()
 			.then(res => {
-				setState('img', res.data[i].download_url)
+				_setState('allImages', res.data)
+				_setState('img', res.data[i].download_url)
 			})
 	}
 
 	nextImg() {
-		this.getImgData()
+		let i = this.getRandom()
+		_setState('img', this.AllImages[i].download_url)
+	}
+
+	getRandom() {
+		return Math.floor((Math.random() * 100) + 1)
 	}
 
 }

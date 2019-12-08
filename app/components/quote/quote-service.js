@@ -34,7 +34,7 @@ export default class QuoteService {
 		return _state.quote
 	}
 
-	get allQuotes() {
+	get AllQuotes() {
 		return _state.allQuotes
 	}
 
@@ -49,7 +49,7 @@ export default class QuoteService {
 
 	nextQuote() {
 		let i = this.getRandom()
-		_setState('quote', new Quote(this.allQuotes, i))
+		_setState('quote', new Quote(this.AllQuotes, i))
 	}
 
 	getRandom() {
