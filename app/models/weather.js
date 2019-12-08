@@ -40,4 +40,16 @@ export default class Weather {
           `
     }
 
+    cityName() {
+        return this.city
+    }
+
+    modalFooter(cityName) {
+        return `
+      <a href="https://weather.com/en-US/search/enhancedlocalsearch?where=${cityName}&loctypes=1/4/5/9/11/13/19/21/1000/1001/1003/&from=hdr"
+        target="_blank"><button type="button" class="btn btn-primary shadow">3 DayForecast</button></a>
+            <button type="button" class="btn btn-outline-dark shadow" data-dismiss="modal">Close</button>
+        `
+    }
+
 }

@@ -21,6 +21,18 @@ function drawForecastWeather() {
 	document.querySelector('#modal-wx').innerHTML = template
 }
 
+function modalTitle() {
+	let cityName = _weatherService.Weather.cityName()
+	let template = cityName + " Weather in 24 Hours"
+	document.getElementById('modal-title').innerHTML = template
+}
+
+function modalFooter() {
+	let cityName = _weatherService.Weather.cityName()
+	let footer = _weatherService.Weather.modalFooter(cityName)
+	document.getElementById('modal-footer').innerHTML = footer
+}
+
 
 //Public
 export default class WeatherController {
@@ -53,6 +65,8 @@ export default class WeatherController {
 	forecast() {
 		let cityId = _weatherService.Weather.cityId
 		_weatherService.getForecast(cityId)
+		modalTitle()
+		modalFooter()
 	}
 
 	closeModal() {

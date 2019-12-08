@@ -120,7 +120,9 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="">Weather in 24 hours</h5>
+								<h5 class="modal-title" id="modal-title">
+									<!--modalTitle inserted here-->
+								</h5>
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
@@ -128,12 +130,8 @@
 							<div class="modal-body" id="modal-wx">
 								<!--weather forecast-->
 							</div>
-							<div class="modal-footer">
-								<a href="https://weather.com/weather/today/l/f3ee587cce023b135305cd84e12e67e8d6a20831c6487ac41bcaf1b7ed91c5d4"
-									target="_blank"><button type="button" class="btn btn-primary shadow"
-										onclick="app.controllers.weatherController.closeModal()">3 Day
-										Forecast</button></a>
-								<button type="button" class="btn btn-outline-dark shadow" data-dismiss="modal">Close</button>
+							<div class="modal-footer" id="modal-footer">
+								<!--modalFooter inserted here-->
 							</div>
 						</div>
 					</div>

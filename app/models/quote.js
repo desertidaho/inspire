@@ -1,6 +1,11 @@
 export default class Quote {
   constructor(data, i) {
-    this.author = data[i].author
+    if (data[i].author == null) {
+      this.author = "Anonymous"
+    }
+    else {
+      this.author = data[i].author
+    }
     this.text = data[i].text
   }
 
