@@ -59,7 +59,7 @@ export default class PriceController {
     }
 
     openCryptoNews() {
-        window.open('https://brettwilcox.info/Crypto/')
+        window.open('https://brettwilcox.info/crypto/')
     }
 
 }
