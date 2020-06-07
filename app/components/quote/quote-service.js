@@ -4,7 +4,7 @@ import Quote from "../../models/quote.js";
 const _quoteApi = axios.create({
 	//baseURL: '//bcw-sandbox.herokuapp.com/api/quotes',
 	//baseURL: 'https://api.quotable.io/random',
-	baseURL: 'https://type.fit/api/quotes',
+	baseURL: 'https://cors-anywhere.herokuapp.com/https://type.fit/api/quotes',
 	timeout: 15000
 });
 
