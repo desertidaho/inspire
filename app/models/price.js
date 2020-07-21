@@ -37,15 +37,6 @@ export default class Price {
                     this.ltc24HourChange = '+' + this.ltc24HourChange
                 }
             }
-            if (data[i].id == 'stellar') {
-                this.xlmRank = data[i].rank
-                this.xlmName = data[i].name
-                this.xlmPrice = '$' + Number(data[i].priceUsd).toFixed(2);
-                this.xlm24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
-                if (this.xlm24HourChange >= 0) {
-                    this.xlm24HourChange = '+' + this.xlm24HourChange
-                }
-            }
             if (data[i].id == 'chainlink') {
                 this.linkRank = data[i].rank
                 this.linkName = data[i].name
@@ -53,6 +44,15 @@ export default class Price {
                 this.link24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
                 if (this.link24HourChange >= 0) {
                     this.link24HourChange = '+' + this.link24HourChange
+                }
+            }
+            if (data[i].id == 'stellar') {
+                this.xlmRank = data[i].rank
+                this.xlmName = data[i].name
+                this.xlmPrice = '$' + Number(data[i].priceUsd).toFixed(2);
+                this.xlm24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
+                if (this.xlm24HourChange >= 0) {
+                    this.xlm24HourChange = '+' + this.xlm24HourChange
                 }
             }
         }
@@ -108,17 +108,17 @@ export default class Price {
             <td>${this.ltcPrice}</td>
             <td align="right">${this.ltc24HourChange}%</td>
         </tr>
+         <tr class="table-rows">
+            <td>${this.linkRank}</td>
+            <td>${this.linkName}</td>
+            <td>${this.linkPrice}</td>
+            <td align="right">${this.link24HourChange}%</td>
+        </tr>
         <tr class="table-rows">
             <td>${this.xlmRank}</td>
             <td>${this.xlmName}</td>
             <td>${this.xlmPrice}</td>
             <td align="right">${this.xlm24HourChange}%</td>
-        </tr>
-        <tr class="table-rows">
-            <td>${this.linkRank}</td>
-            <td>${this.linkName}</td>
-            <td>${this.linkPrice}</td>
-            <td align="right">${this.link24HourChange}%</td>
         </tr>
           `
     }
