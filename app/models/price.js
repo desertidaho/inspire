@@ -97,12 +97,6 @@ export default class Price {
             <td align="right">${this.eth24HourChange}%</td>
         </tr>
         <tr class="table-rows">
-            <td>${this.xrpRank}</td>
-            <td>Ripple</td>
-            <td>${this.xrpPrice}</td>
-            <td align="right">${this.xrp24HourChange}%</td>
-        </tr>
-        <tr class="table-rows">
             <td>${this.ltcRank}</td>
             <td>${this.ltcName}</td>
             <td>${this.ltcPrice}</td>
@@ -113,12 +107,6 @@ export default class Price {
             <td>${this.linkName}</td>
             <td>${this.linkPrice}</td>
             <td align="right">${this.link24HourChange}%</td>
-        </tr>
-        <tr class="table-rows">
-            <td>${this.xlmRank}</td>
-            <td>${this.xlmName}</td>
-            <td>${this.xlmPrice}</td>
-            <td align="right">${this.xlm24HourChange}%</td>
         </tr>
           `
     }
