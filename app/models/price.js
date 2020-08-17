@@ -97,12 +97,6 @@ export default class Price {
             <td align="right">${this.eth24HourChange}%</td>
         </tr>
         <tr class="table-rows">
-            <td>${this.linkRank}</td>
-            <td>${this.linkName}</td>
-            <td>${this.linkPrice}</td>
-            <td align="right">${this.link24HourChange}%</td>
-        </tr>
-        <tr class="table-rows">
             <td>${this.ltcRank}</td>
             <td>${this.ltcName}</td>
             <td>${this.ltcPrice}</td>
