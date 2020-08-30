@@ -33,6 +33,12 @@ function modalFooter() {
 	document.getElementById('modal-footer').innerHTML = footer
 }
 
+function pullCityByIP() {
+	let city = _weatherService.CityByIP.cityByIPTemplate()
+	console.log("Bingo!" + city)
+	_weatherService.getWeather(city)
+}
+
 
 //Public
 export default class WeatherController {
@@ -40,8 +46,9 @@ export default class WeatherController {
 		_weatherService.addSubscriber('weather', drawWeather)
 		_weatherService.addSubscriber('changeCity', drawCityForm)
 		_weatherService.addSubscriber('forecastWx', drawForecastWeather)
-		_weatherService.getWeather()
+		_weatherService.addSubscriber('cityByIP', pullCityByIP)
 		_weatherService.refresh()
+		_weatherService.getCityByIP()
 	}
 
 	changeCity() {

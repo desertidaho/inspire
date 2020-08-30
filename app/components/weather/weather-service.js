@@ -1,25 +1,27 @@
 import Weather from "../../models/weather.js";
 import ForecastWeather from "../../models/forecastWeather.js";
+import CityByIP from "../../models/cityByIP.js";
 
 // @ts-ignore
-const _weatherApi = axios.create({
-	//baseURL: "//bcw-sandbox.herokuapp.com/api/weather",
-	baseURL: "https://api.openweathermap.org/data/2.5/weather?q=Boise,us&appid=bf264f973fd98424c688abafb6a2434f",
-	timeout: 6000
+const _cityByIPApi = axios.create({
+	baseURL: "http://ip-api.com/json/99.203.18.226",
+	timeout: 15000
 });
 
 let _state = {
 	weather: {},
 	changeCity: "",
 	newCity: {},
-	forecastWx: {}
+	forecastWx: {},
+	cityByIP: ""
 }
 
 let _subscribers = {
 	weather: [],
 	changeCity: [],
 	newCity: [],
-	forecastWx: []
+	forecastWx: [],
+	cityByIP: []
 }
 
 function _setState(prop, data) {
@@ -47,12 +49,26 @@ export default class WeatherService {
 		return _state.forecastWx
 	}
 
-	getWeather() {
-		_weatherApi.get()
+	get CityByIP() {
+		return _state.cityByIP
+	}
+
+
+	getWeather(city) {
+		// @ts-ignore
+		const weatherApi = axios.create({
+			baseURL: "https://api.openweathermap.org/data/2.5/weather?q=" + city + ",us&appid=bf264f973fd98424c688abafb6a2434f",
+			timeout: 6000
+		});
+		weatherApi.get()
 			.then(res => {
 				_setState('weather', new Weather(res.data))
 			})
 	}
+
+
+
+
 
 	refresh() {
 		setInterval(this.getWeather, 600000)
@@ -90,6 +106,15 @@ export default class WeatherService {
 			.then(res => {
 				_setState('forecastWx', new ForecastWeather(res.data.list))
 			})
+	}
+
+	getCityByIP() {
+		console.log("calling cityByIP")
+		let consoleLogData = _cityByIPApi.get()
+			.then(res => {
+				_setState('cityByIP', new CityByIP(res.data))
+			})
+		console.log(consoleLogData)
 	}
 
 }

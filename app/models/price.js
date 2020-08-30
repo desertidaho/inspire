@@ -91,10 +91,10 @@ export default class Price {
             <td align="right">${this.btc24HourChange}%</td>
         </tr>
         <tr class="table-rows">
-            <td>${this.ethRank}</td>
-            <td>${this.ethName}</td>
-            <td>${this.ethPrice}</td>
-            <td align="right">${this.eth24HourChange}%</td>
+            <td>${this.linkRank}</td>
+            <td>${this.linkName}</td>
+            <td>${this.linkPrice}</td>
+            <td align="right">${this.link24HourChange}%</td>
         </tr>
         <tr class="table-rows">
             <td>${this.ltcRank}</td>
