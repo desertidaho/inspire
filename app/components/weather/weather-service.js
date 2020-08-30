@@ -4,7 +4,7 @@ import CityByIP from "../../models/cityByIP.js";
 
 // @ts-ignore
 const _cityByIPApi = axios.create({
-	baseURL: "http://ip-api.com/json/99.203.18.226",
+	baseURL: "https://ipapi.co/99.203.18.226/json/",
 	timeout: 15000
 });
 
