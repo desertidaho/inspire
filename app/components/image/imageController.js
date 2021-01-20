@@ -4,6 +4,7 @@ const _is = new ImageService()
 
 function drawImg() {
   let img = _is.ImgApi
+  // @ts-ignore
   document.querySelector('#bg-image').style.backgroundImage = `url(${img})`;
 }
 

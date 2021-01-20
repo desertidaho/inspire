@@ -22,13 +22,14 @@ function drawUserForm() {
                     <button type="submit" class="btn btn-primary mb-2 shadow">Submit</button>
                   </form>`
   document.querySelector('#user-form').innerHTML = template
-  document.querySelector('#user').innerHTML = 'WAT!'
+  //document.querySelector('#user').innerHTML = 'WAT!'
 }
 
 function drawNewUser() {
   let newUser = _greetingService.NewUser.name
   window.localStorage.setItem('name', JSON.stringify(newUser))
   document.querySelector('#user').innerHTML = newUser
+  // @ts-ignore
   document.querySelector('#user-form').style.visibility = "hidden"
 }
 

@@ -6,10 +6,12 @@ function getTime() {
     hour = 12
   }
   if (hour < 10) {
+    // @ts-ignore
     hour = '0' + hour
   }
   let min = date.getMinutes()
   if (min < 10) {
+    // @ts-ignore
     min = '0' + min
   }
   time = hour + ':' + min

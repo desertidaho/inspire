@@ -20,18 +20,23 @@ body {
 #todo-div {
     background: black;
     color: white;
-    text-shadow: 0.2px 0.9px rgb(4, 228, 4);
+    text-shadow: 0.2px 0.9px red;
     border: transparent;
     line-height: 1.5rem;
     opacity: 0.6;
     padding: 1.5vh 1.5vw;
     letter-spacing: 0.1rem;
-    border-radius: 3px;
+    border-radius: 5px;
+}
+
+#forecast,
+#news {
+  letter-spacing: 0.1rem;
 }
 
 #todos {
   color: white;
-  text-shadow: 0.2px 0.2px rgb(4, 228, 4);
+  text-shadow: 0.2px 0.9px red;
 }
 
 #num-of-todos {
@@ -39,7 +44,7 @@ body {
 }
 
 input[type="text"]#todo-input::-webkit-input-placeholder {
-  color: green;
+  color: red;
   font-weight: 400;
   width: 200px;
 }
@@ -80,7 +85,7 @@ li {
     letter-spacing: 0.1rem;
     padding: 1.5vh 1.5vw;
     font-size: 0.97rem;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 #quote-div {
@@ -93,7 +98,7 @@ li {
     padding: 1.5vh 1.5vw;
     letter-spacing: 0.1rem;
     font-weight: 300;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 .author {
@@ -133,14 +138,14 @@ li {
 #price-div {
     background: black;
     color: white;
-    text-shadow: 0.2px 0.9px orange;
+    text-shadow: 0.2px 0.9px rgb(4, 228, 4);
     border: transparent;
     line-height: 0.3rem;
     opacity: 0.6;
     padding: 1.5vh 1.5vw;
     letter-spacing: 0.1rem;
     font-weight: 300;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 #user:hover {
@@ -149,6 +154,19 @@ li {
 
 #user-form {
   margin-left: 23vw;
+}
+
+#metals-div {
+    background: black;
+    color: white;
+    text-shadow: 0.2px 0.9px red;
+    border: transparent;
+    line-height: 0.3rem;
+    opacity: 0.6;
+    padding: 1.5vh 1.5vw;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+    border-radius: 5px;
 }
 
 footer {
@@ -160,11 +178,48 @@ footer {
 }
 
 #next-img,
-#next-quote {
+#next-quote, 
+#music-btn, 
+#forecast,
+#news {
   text-shadow: 1px 1px black;
   letter-spacing: 0.06rem;
 }
 
+.table-rows {
+  line-height: 1.5rem;
+}
+
+.table-header {
+  line-height: 2.4rem;
+  font-size: 1.1rem;
+}
+
+#change24 {
+  font-size: 0.99rem;
+}
+
+#news {
+  color: white;
+}
+
+.table-header {
+  text-decoration: underline;
+}
+
+#forecast,
+#crypto-news {
+  float: right;
+}
+
+#market-cap {
+  display: none;
+}
+
+#refresh-prices {
+  
+  visibility: hidden;
+}
 
 @media (hover: none) {
 
@@ -178,17 +233,47 @@ footer {
   }
 
   #date {
-    margin-top: 18vh;
-    font-size: 1.5rem;
+    display: none;
   }
 
   #clock {
-    font-size: 4rem;
+    display: none;
   }
 
   #greeting {
-    font-size: 1.5rem;
-    margin-bottom: 10vh;
+    display: none;
   }
+
+  #todo-div {
+    display: none;
+  }
+
+  #forecast,
+#news {
+display: none; 
+}
+
+#todos {
+display: none; 
+}
+
+#weather {
+   display: none;
+}
+
+#quote-div {
+display: none;
+}
+
+#music-btn {
+  display: none;
+}
+
+#market-cap {
+  display: inline;
+  font-size: 1.6rem;
+  color: white;
+  text-shadow: 1px 2px black;
+}
 
 }

@@ -4,6 +4,7 @@ import TodoController from "./components/todo/todoController.js";
 import QuoteController from "./components/quote/quote-controller.js";
 import GreetingController from "./components/greeting/greetingController.js";
 import PriceController from "./components/price/priceController.js";
+import NewsController from "./components/news/newsController.js";
 
 class App {
   constructor() {
@@ -13,7 +14,8 @@ class App {
       todoController: new TodoController(),
       quoteController: new QuoteController(),
       greetingController: new GreetingController(),
-      priceController: new PriceController()
+      priceController: new PriceController(),
+      newsController: new NewsController()
     }
   }
 }

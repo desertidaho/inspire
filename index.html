@@ -12,7 +12,8 @@
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-	<link rel="shortcut icon" href="./assets/img/favicon-check.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./assets/img/bitcoin-favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="./assets/img/ios-bitcoin.png" />
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -21,16 +22,11 @@
 		<div class="row">
 
 			<!-- left column -->
-			<div class="col-12 col-md-3 mt-2 d-flex flex-column justify-content-start">
-
-                <!-- prices-->
-                <div id="price" class="text-white mt-2">
-                    <h5 class="mt-1">Prices</h5>
-                </div>
+			<div class="col-12 col-md-3 mt-3 d-flex flex-column justify-content-start">
 
 				<!-- todos -->
-				<div id="todo-div" class="text-white mt-3">
-					<h5 class="mt-1">Todo List,<span id="num-of-todos"></span></h5>
+				<div id="todo-div" class="text-white mt-0">
+					<h5 class="">Todo List,<span id="num-of-todos"></span></h5>
 					<div id="todo-error">
 						<!-- error message here -->
 					</div>
@@ -40,21 +36,46 @@
 					<div id="todos">
 						<!-- insert todo's here -->
 					</div>
-				</div>
+				</div>  
 
 				<!-- weather -->
-				<div id="weather" class="mt-3">
+				<div id="weather" class="mt-2">
 					<!-- Your Weather Template -->
 				</div>
 
-				<!-- quote -->
-				<div id="quote" class="mt-3">
-					The Quote
+				<!--mobile only market cap-->
+				<div id="market-cap" class="mt-2">
+					<!--market cap here-->
 				</div>
+
+				<!-- prices-->
+				<div id="price-div" class=" mt-2">
+					<!--<h5>Market Cap: <span id="market-cap">-->
+					<!--insert market cap here-->
+					</span> </h5>
+					<table id="price">
+						<!--insert crypto prices-->
+					</table>
+					<div class="mt-3">
+						<a onclick="app.controllers.priceController.openCryptoNews()" target="_blank" id="" class=""><span
+								class="mt-5 ml-3" id="refresh-prices">Updating Prices...</span><button
+								class="btn btn-sm btn-outline-light shadow-lg" id="crypto-news">Crypto News<i
+									class="fas fa-arrow-right ml-2"></i></button></a>
+					</div>
+				</div>
+
+				<!--
+				<div id="metals-div" class="mt-2">
+				<table id="metals">
+				insert metal prices
+				</table>
+				</div>
+				-->
+
 			</div>
 
 			<!-- right column -->
-			<div class="col-12 col-md-9 mt-2 d-flex flex-column justify-content-center align-items-center">
+			<div class="col-12 col-md-9 mt-4 d-flex flex-column justify-content-center align-items-center">
 
 				<!-- date -->
 				<div id="date">
@@ -70,7 +91,7 @@
 				<div class="row mt-4">
 					<div class="col-md-12 d-flex justify-content-center">
 						<h1 id="greeting">Good <span id="change-greeting"> </span><span data-toggle="tooltip"
-								title="Change username" onclick="app.controllers.greetingController.changeUser()" id="user">Brett
+								title="Change Username" onclick="app.controllers.greetingController.changeUser()" id="user">Brett
 							</span>, what
 							is your
 							main focus for
@@ -81,15 +102,53 @@
 							<!-- username form goes here -->
 						</div>
 					</div>
+					<div class="row mt-4">
+						<div class="col-md-12" id="city-form">
+							<!-- city form goes here -->
+						</div>
+					</div>
 				</div>
-			</div>
 
+				<!-- quote -->
+				<div id="quote" class="mt-5">
+					The Quote
+				</div>
+
+				<!--modal-->
+				<div class="modal fade" id="forecastModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="modal-title">
+									<!--modalTitle inserted here-->
+								</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body" id="modal-wx">
+								<!--weather forecast-->
+							</div>
+							<div class="modal-footer" id="modal-footer">
+								<!--modalFooter inserted here-->
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
 		</div>
 
 		<footer class="row">
 			<div class="col-12 d-flex justify-content-end">
+				<button class="btn btn-sm btn-outline-light shadow-lg mr-3" id="news"
+					onclick="app.controllers.newsController.openNews()">News<i class="fas fa-arrow-right ml-2"></i></button>
+				<a href="https://soundcloud.com/you/likes" target="_blank" id="music" class="mr-3"><button
+						class="btn btn-sm btn-outline-light shadow-lg" id="music-btn">Music<i
+							class="fas fa-arrow-right ml-2"></i></button></a>
 				<button class="btn btn-sm btn-outline-light shadow-lg" id="next-img"
-					onclick="app.controllers.imageController.nextImg()">Change image<i
+					onclick="app.controllers.imageController.nextImg()">Change Image<i
 						class="fas fa-arrow-right ml-2"></i></button>
 			</div>
 		</footer>
