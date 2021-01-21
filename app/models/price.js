@@ -46,13 +46,13 @@ export default class Price {
                     this.link24HourChange = '+' + this.link24HourChange
                 }
             }
-            if (data[i].id == 'stellar') {
-                this.xlmRank = data[i].rank
-                this.xlmName = data[i].name
-                this.xlmPrice = '$' + Number(data[i].priceUsd).toFixed(2);
-                this.xlm24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
-                if (this.xlm24HourChange >= 0) {
-                    this.xlm24HourChange = '+' + this.xlm24HourChange
+            if (data[i].id == 'polkadot') {
+                this.dotRank = data[i].rank
+                this.dotName = data[i].name
+                this.dotPrice = '$' + Number(data[i].priceUsd).toFixed(2);
+                this.dot24HourChange = Number(data[i].changePercent24Hr).toFixed(2)
+                if (this.dot24HourChange >= 0) {
+                    this.dot24HourChange = '+' + this.dot24HourChange
                 }
             }
         }
@@ -91,16 +91,16 @@ export default class Price {
             <td align="right">${this.btc24HourChange}%</td>
         </tr>
         <tr class="table-rows">
-            <td>${this.linkRank}</td>
-            <td>${this.linkName}</td>
-            <td>${this.linkPrice}</td>
-            <td align="right">${this.link24HourChange}%</td>
+            <td>${this.ethRank}</td>
+            <td>${this.ethName}</td>
+            <td>${this.ethPrice}</td>
+            <td align="right">${this.eth24HourChange}%</td>
         </tr>
         <tr class="table-rows">
-            <td>${this.ltcRank}</td>
-            <td>${this.ltcName}</td>
-            <td>${this.ltcPrice}</td>
-            <td align="right">${this.ltc24HourChange}%</td>
+            <td>${this.dotRank}</td>
+            <td>${this.dotName}</td>
+            <td>${this.dotPrice}</td>
+            <td align="right">${this.dot24HourChange}%</td>
         </tr>
           `
     }
